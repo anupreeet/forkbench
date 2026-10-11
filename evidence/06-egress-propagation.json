@@ -1,0 +1,409 @@
+{
+  "tag": "fb-egress-1791685203",
+  "started_utc": "2026-10-11T02:20:03.317042+00:00",
+  "urls": [
+    "https://example.com",
+    "https://pypi.org",
+    "https://1.1.1.1",
+    "https://1.0.0.1"
+  ],
+  "transitions": [
+    {
+      "label": "allow example.com",
+      "set_call_s": 1.75,
+      "read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['example.com'], denied_hosts=[])",
+      "expect_reachable": [
+        true,
+        false,
+        false,
+        false
+      ],
+      "converged_after_s": 28.1,
+      "n_samples": 8,
+      "samples": [
+        {
+          "t": 4.5,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 7.9,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 11.2,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 14.5,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 17.9,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 21.1,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 24.5,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 28.1,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "open (reset)",
+      "set_call_s": 1.6,
+      "read_back": "EgressPolicy(mode=<EgressMode.DENYLIST: 'denylist'>, allowed_hosts=[], denied_hosts=[])",
+      "expect_reachable": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "converged_after_s": 19.6,
+      "n_samples": 6,
+      "samples": [
+        {
+          "t": 3.2,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 6.6,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 9.8,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 13.0,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 16.2,
+          "codes": [
+            "200",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 19.6,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "allow nothing",
+      "set_call_s": 1.62,
+      "read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=[], denied_hosts=[])",
+      "expect_reachable": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "converged_after_s": 20.1,
+      "n_samples": 6,
+      "samples": [
+        {
+          "t": 3.5,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 6.8,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 10.2,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 13.6,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 16.9,
+          "codes": [
+            "200",
+            "200",
+            "301",
+            "301"
+          ]
+        },
+        {
+          "t": 20.1,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "allow IP 1.1.1.1",
+      "set_call_s": 1.67,
+      "read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['1.1.1.1'], denied_hosts=[])",
+      "expect_reachable": [
+        false,
+        false,
+        true,
+        false
+      ],
+      "converged_after_s": 22.0,
+      "n_samples": 7,
+      "samples": [
+        {
+          "t": 3.1,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 6.3,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 9.4,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 12.5,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 15.7,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 18.9,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "000"
+          ]
+        },
+        {
+          "t": 22.0,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        }
+      ]
+    },
+    {
+      "label": "allow CIDR 1.0.0.0/24",
+      "set_call_s": 1.7,
+      "read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['1.0.0.0/24'], denied_hosts=[])",
+      "expect_reachable": [
+        false,
+        false,
+        false,
+        true
+      ],
+      "converged_after_s": 25.8,
+      "n_samples": 8,
+      "samples": [
+        {
+          "t": 3.2,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 6.3,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 9.5,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 12.8,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 15.9,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 19.2,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 22.5,
+          "codes": [
+            "000",
+            "000",
+            "301",
+            "000"
+          ]
+        },
+        {
+          "t": 25.8,
+          "codes": [
+            "000",
+            "000",
+            "000",
+            "301"
+          ]
+        }
+      ]
+    }
+  ],
+  "runtime_id": "01a128c2-995b-7891-88fc-c8be0cd49faa",
+  "baseline": [
+    "000",
+    "200",
+    "301",
+    "301"
+  ]
+}

@@ -1,0 +1,27 @@
+[02:34:36] runta 0.2.15; creating A (default) and B (TLS passthrough for GitHub)
+[02:36:01] B config: ["github.com","*.githubusercontent.com"]
+[02:36:01] --- TLS issuer seen for github.com
+[02:36:04] fb-dl-a-1791686076: *  issuer: CN=runta-egress-gateway-intermediate:56d325c3-0d67-4ed7-ae0e-a63a1768a7a8
+[02:36:06] fb-dl-b-1791686076: *  issuer: C=GB; O=Sectigo Limited; CN=Sectigo Public Server Authentication CA DV E36
+[02:36:07] M: *  issuer: C=GB; O=Sectigo Limited; CN=Sectigo Public Server Authentication CA DV E36
+[02:36:07] --- round 1: uv tarball (17.8 MB, GitHub release -> release-assets.githubusercontent.com)
+[02:36:10] B uv#1 code=200 size=17791244 time=0.209751s speed=84820782B/s exit=0
+[02:36:24] A uv#1 code=200 size=17791244 time=13.870617s speed=1282657B/s exit=0
+[02:36:25] M uv#1 code=200 size=17791244 time=17.899986s speed=993925B/s exit=0
+[02:36:25] --- round 2: uv tarball (17.8 MB, GitHub release -> release-assets.githubusercontent.com)
+[02:36:27] A uv#2 code=200 size=17791244 time=0.156571s speed=113630519B/s exit=0
+[02:36:28] B uv#2 code=200 size=17791244 time=0.168693s speed=105465217B/s exit=0
+[02:36:38] M uv#2 code=200 size=17791244 time=12.381955s speed=1436868B/s exit=0
+[02:36:38] --- round 3: uv tarball (17.8 MB, GitHub release -> release-assets.githubusercontent.com)
+[02:36:40] B uv#3 code=200 size=17791244 time=0.185267s speed=96030291B/s exit=0
+[02:36:40] A uv#3 code=200 size=17791244 time=0.198098s speed=89810316B/s exit=0
+[02:36:45] M uv#3 code=200 size=17791244 time=7.741826s speed=2298068B/s exit=0
+[02:36:45] --- round 1: 20 MB from speed.cloudflare.com (non-GitHub control)
+[02:36:49] A cf#1 code=200 size=20000000 time=1.664628s speed=12014696B/s exit=0
+[02:36:54] B cf#1 code=200 size=20000000 time=6.453478s speed=3099104B/s exit=0
+[02:36:58] M cf#1 code=200 size=20000000 time=12.288364s speed=1627555B/s exit=0
+[02:36:58] --- round 2: 20 MB from speed.cloudflare.com (non-GitHub control)
+[02:37:01] B cf#2 code=200 size=20000000 time=0.251419s speed=79548482B/s exit=0
+[02:37:02] A cf#2 code=200 size=20000000 time=0.242891s speed=82341461B/s exit=0
+[02:37:15] M cf#2 code=200 size=20000000 time=17.346827s speed=1152948B/s exit=0
+[02:37:19] cleanup done; left: ["fb-dl-b-1791686076"]

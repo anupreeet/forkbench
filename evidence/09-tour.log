@@ -1,0 +1,214 @@
+[02:25:12] === A. secret stubs (fake value; never printed by us)
+[02:25:12] $ runta run --name fb-tour-sec-1791685512 --cpus 1 --memory 1024 --wait
+{
+  "accepted": true,
+  "action": "run",
+  "desired_status": "running",
+  "runtime": {
+    "can_manage": true,
+    "created_at": "2026-10-11T02:25:14Z",
+    "cur_memory_mib": 1024,
+    "degraded": false,
+    "desired_status": "running",
+    "disk_size_gib": 32,
+    "display_name": "fb-tour-sec-1791685512",
+    "egress_policy": {
+      "denied_hosts": [],
+      "mode": "denylist"
+    },
+    "environment_variables": {},
+    "error_code": null,
+    "id": "01a128c7-4edd-7a22-a8ed-c7cfc88c232e",
+    "idle_policy": {
+      "mode": "disabled"
+    },
+    "image_id": "clean",
+    "ingress_specs": [],
+    "llm_session_content_capture_enabled": false,
+    "llm_token_saving_policy": {
+      "git_diff_enabled": false,
+      "json_array_enabled": false,
+      "log_enabled": false,
+      "search_results_enabled": false
+    },
+    "llm_tool_io_capture_enabled": false,
+    "max_memory_mib": 1024,
+    "min_memory_mib": 1024,
+    "observed_disk_size_gib": 32,
+    "owner_user_id": "<redacted>",
+    "revision": 2,
+    "secret_configuration": [],
+    "ssh_enabled": true,
+    "status": "running",
+    "tls_passthrough_hosts": [],
+    "updated_at": "2026-10-11T02:25:17Z",
+    "vcpus": 1,
+    "vnc_connection": {
+      "hostname": "vnc.runta.com",
+      "port": 5900,
+      "security_type": "X509Plain",
+      "username": "runta"
+    },
+    "vnc_enabled": false,
+    "vnc_error_code": null,
+    "vnc_ready": false
+  }
+}
+[02:26:51] secret set exit=0 (output redacted: {"action":"secret-set","secret":{"cache_ttl_secs":0,"display_name":"fb-tour-demo-1791685512","id":"8ea79316-43fd-4d21-8c02-f4a9c02a6b47"}})
+[02:26:51] A1: rule exactly as in the docs: --template 'Bearer ${credential}'
+[02:26:51] $ runta secret rule set fb-tour-sec-1791685512 --host httpbin.org --path /headers --secret fb-tour-demo-1791685512 --header X-Fb-Demo --template Bearer ${credential}
+{
+  "error": {
+    "code": "CLI",
+    "kind": "cli",
+    "message": "--template must contain ${secret} exactly once"
+  }
+}
+[02:26:51] A2: rule as the CLI help describes: --template 'Bearer ${secret}'
+[02:26:51] $ runta secret rule set fb-tour-sec-1791685512 --host httpbin.org --path /headers --secret fb-tour-demo-1791685512 --header X-Fb-Demo --template Bearer ${secret}
+{
+  "action": "secret-rule-list",
+  "secret_configuration": [
+    {
+      "egress_rules": [
+        {
+          "action": "header",
+          "host_pattern": "httpbin.org",
+          "name": "X-Fb-Demo",
+          "path_pattern": "/headers",
+          "value_template": "Bearer ${secret}"
+        }
+      ],
+      "environment": [],
+      "files": [],
+      "secret_id": "<redacted>"
+    }
+  ]
+}
+[02:26:54] $ runta secret rule ls fb-tour-sec-1791685512
+{
+  "action": "secret-rule-list",
+  "secret_configuration": [
+    {
+      "egress_rules": [
+        {
+          "action": "header",
+          "host_pattern": "httpbin.org",
+          "name": "X-Fb-Demo",
+          "path_pattern": "/headers",
+          "value_template": "Bearer ${secret}"
+        }
+      ],
+      "environment": [],
+      "files": [],
+      "secret_id": "<redacted>"
+    }
+  ]
+}
+[02:26:55] A3: does the injected header reach the upstream? (poll up to 120 s; httpbin echoes headers)
+[02:27:23] injected value seen by upstream: yes after 28 s
+[02:27:23] A4: path scoping: /get is not covered by the rule -> header should be absent
+[02:27:32] /get: value absent (expected)
+[02:27:32] A5: is the value visible inside the runtime? (env + common dirs)
+[02:27:33] inside runtime: not found in env or files
+[02:27:33] === B. publish + auto-suspend/wake
+[02:27:33] $ runta run --name fb-tour-web-1791685512 --cpus 1 --memory 1024 -p 8080/https --idle-mode suspend-and-wakeup --idle-timeout 30 --wait
+{
+  "accepted": true,
+  "action": "run",
+  "desired_status": "running",
+  "runtime": {
+    "can_manage": true,
+    "created_at": "2026-10-11T02:27:35Z",
+    "cur_memory_mib": 1024,
+    "degraded": false,
+    "desired_status": "running",
+    "disk_size_gib": 32,
+    "display_name": "fb-tour-web-1791685512",
+    "egress_policy": {
+      "denied_hosts": [],
+      "mode": "denylist"
+    },
+    "environment_variables": {},
+    "error_code": null,
+    "id": "01a128c9-773a-7192-8771-206bb5c8f973",
+    "idle_policy": {
+      "mode": "suspend_and_wakeup",
+      "suspend_after_secs": 30
+    },
+    "image_id": "clean",
+    "ingress_specs": [
+      {
+        "protocol": "https",
+        "runtime_port": 8080
+      }
+    ],
+    "llm_session_content_capture_enabled": false,
+    "llm_token_saving_policy": {
+      "git_diff_enabled": false,
+      "json_array_enabled": false,
+      "log_enabled": false,
+      "search_results_enabled": false
+    },
+    "llm_tool_io_capture_enabled": false,
+    "max_memory_mib": 1024,
+    "min_memory_mib": 1024,
+    "observed_disk_size_gib": 32,
+    "owner_user_id": "<redacted>",
+    "revision": 2,
+    "secret_configuration": [],
+    "ssh_enabled": true,
+    "status": "running",
+    "tls_passthrough_hosts": [],
+    "updated_at": "2026-10-11T02:27:39Z",
+    "vcpus": 1,
+    "vnc_connection": {
+      "hostname": "vnc.runta.com",
+      "port": 5900,
+      "security_type": "X509Plain",
+      "username": "runta"
+    },
+    "vnc_enabled": false,
+    "vnc_error_code": null,
+    "vnc_ready": false
+  }
+}
+[02:28:50] web runtime id: 01a128c9-773a-7192-8771-206bb5c8f973
+[02:28:50] $ runta exec fb-tour-web-1791685512 -- bash -lc mkdir -p /srv && echo hello-forkbench > /srv/index.html && cd /srv && setsid -f python3 -m http.server 8080 >/dev/null 2>&1; sleep 1; curl -s localhost:8080/
+{
+  "action": "exec",
+  "args": [
+    "-lc",
+    "mkdir -p /srv && echo hello-forkbench > /srv/index.html && cd /srv && setsid -f python3 -m http.server 8080 >/dev/null 2>&1; sleep 1; curl -s localhost:8080/"
+  ],
+  "command": "bash",
+  "runtime_name": "fb-tour-web-1791685512",
+  "status": 0,
+  "stderr": "",
+  "stdout": "hello-forkbench\n"
+}
+[02:28:53] $ runta ports ls fb-tour-web-1791685512
+{
+  "action": "ports-ls",
+  "ports": [
+    {
+      "protocol": "https",
+      "runtime_port": 8080,
+      "url": "https://8080-01a128c9-773a-7192-8771-206bb5c8f973.runta.dev"
+    }
+  ],
+  "runtime": {
+    "id": "01a128c9-773a-7192-8771-206bb5c8f973",
+    "name": "fb-tour-web-1791685512"
+  }
+}
+[02:28:55] GET https://01a128c9-773a-7192-8771-206bb5c8f973.runta.dev/ -> 404 0.503111 body=
+[02:28:55] GET https://8080-01a128c9-773a-7192-8771-206bb5c8f973.runta.dev/ -> 200 0.562265 body=hello-forkbench
+[02:28:55] B2: no traffic now; poll status until suspended (max 360 s)
+[02:30:34] status after 99 s idle: suspended
+[02:30:34] WAKE GET https://01a128c9-773a-7192-8771-206bb5c8f973.runta.dev/ -> 404 0.409674 body=
+[02:30:35] WAKE GET https://8080-01a128c9-773a-7192-8771-206bb5c8f973.runta.dev/ -> 404 0.313979 body=
+[02:30:36] status after wake request: suspended
+[02:30:36] --- cleanup
+[02:30:42] runtimes left: ["fb-10110221-6cfe-regex-log-check-nop-0","fb-10110221-6cfe-regex-log-scrat-nop-0","fb-10110221-6cfe-regex-log-scrat-oracle-0","harbor-chess-best-move-chess-best-move__BAQeFmL__env-harbor"]
+[02:30:43] secrets left matching fb-tour: []

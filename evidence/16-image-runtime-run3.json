@@ -1,0 +1,22 @@
+{
+  "name": "fb-img-1791686979",
+  "image": "custom-01a128cd-b904-7703-b105-cc1f6bf876a6",
+  "started_utc": "2026-10-11T02:49:39.639282+00:00",
+  "cli_create_s": 78.3,
+  "cli_create_exit": 0,
+  "cli_create_tail": "\"secret_configuration\": [],\n    \"ssh_enabled\": true,\n    \"status\": \"running\",\n    \"tls_passthrough_hosts\": [],\n    \"updated_at\": \"2026-10-11T02:49:45Z\",\n    \"vcpus\": 2,\n    \"vnc_connection\": {\n      \"hostname\": \"vnc.runta.com\",\n      \"port\": 5900,\n      \"security_type\": \"X509Plain\",\n      \"username\": \"runta\"\n    },\n    \"vnc_enabled\": false,\n    \"vnc_error_code\": null,\n    \"vnc_ready\": false\n  }\n}\n",
+  "env": {
+    "cmd": "head -2 /etc/os-release; echo PWD=$(pwd); ls -la /app | head; command -v python3",
+    "exit": 0,
+    "s": 1.6,
+    "out": "PRETTY_NAME=\"Ubuntu 24.04.3 LTS\"\nNAME=\"Ubuntu\"\nPWD=/app\ntotal 8\ndrwxr-xr-x  2 root root 4096 Sep 13  2025 .\ndrwxr-xr-x 18 root root 4096 Oct 11 02:34 ..\nroot\nrunta-container",
+    "err": ""
+  },
+  "unpack": {
+    "cmd": "mkdir -p /solution /tests /logs/verifier /logs/agent && tar -xf /tmp/sol.tar -C ",
+    "exit": 0,
+    "s": 1.5,
+    "out": "",
+    "err": ""
+  }
+}

@@ -1,0 +1,30 @@
+<stdin>:5: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+# Manual verification of docs-lint hits 2026-10-11T03:04:12ZZ, runta 0.2.15
+# argv passed as explicit lists (no shell). Each ends with a fake flag (--zz-sentinel), so nothing can
+# execute; the CLI reports the FIRST argument it doesn't recognize.
+
+$ runta run --name fb-never-created --agent codex --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--agent' found
+
+$ runta run --name fb-never-created --no-shell --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--no-shell' found
+
+$ runta run --name fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--zz-sentinel' found
+
+$ runta agents ls --zz-sentinel
+  -> UNKNOWN_COMMAND: error: unrecognized subcommand 'agents'
+
+$ runta secret rule ls --runtime fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--runtime' found
+
+$ runta secret rule ls fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--zz-sentinel' found
+
+$ runta secret rule set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found
+
+$ runta egress set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found
+
+# fb-never-created exists? False

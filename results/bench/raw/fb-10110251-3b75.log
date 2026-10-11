@@ -1,0 +1,17 @@
+{"ts": "2026-10-11T02:51:01.057+00:00", "level": "info", "msg": "run fb-10110251-3b75: 1 task(s), estimated \u2264 $0.25"}
+{"ts": "2026-10-11T02:55:23.779+00:00", "level": "info", "msg": "prepare qemu-startup/checkpoint {'golden_provision_s': 77.5720755829825, 'golden_pull_s': 75.03718937496888, 'golden_container_s': 1.6921833340311423, 'checkpoint_s': 107.38954449997982, 'golden_delete_s': 1.0278181670000777}"}
+{"ts": "2026-10-11T02:58:36.125+00:00", "level": "info", "msg": "qemu-startup     scratch    oracle #0  reward=0.0 reset=131.4s"}
+{"ts": "2026-10-11T03:00:48.771+00:00", "level": "info", "msg": "qemu-startup     checkpoint oracle #0  reward=0.0 reset=73.3s"}
+{"ts": "2026-10-11T03:03:12.885+00:00", "level": "info", "msg": "qemu-startup     checkpoint oracle #1  reward=0.0 reset=76.2s"}
+{"ts": "2026-10-11T03:06:49.332+00:00", "level": "info", "msg": "qemu-startup     scratch    oracle #1  reward=0.0 reset=157.3s"}
+{"ts": "2026-10-11T03:10:11.720+00:00", "level": "info", "msg": "qemu-startup     scratch    oracle #2  reward=0.0 reset=141.4s"}
+{"ts": "2026-10-11T03:13:21.306+00:00", "level": "info", "msg": "qemu-startup     checkpoint oracle #2  reward=0.0 reset=128.3s"}
+{"ts": "2026-10-11T03:16:12.565+00:00", "level": "info", "msg": "qemu-startup     checkpoint oracle #3  reward=0.0 reset=110.6s"}
+{"ts": "2026-10-11T03:19:42.503+00:00", "level": "info", "msg": "qemu-startup     scratch    oracle #3  reward=0.0 reset=148.5s"}
+{"ts": "2026-10-11T03:23:00.044+00:00", "level": "info", "msg": "qemu-startup     scratch    oracle #4  reward=0.0 reset=137.2s"}
+{"ts": "2026-10-11T03:26:04.025+00:00", "level": "info", "msg": "qemu-startup     checkpoint oracle #4  reward=0.0 reset=120.1s"}
+{"ts": "2026-10-11T03:28:53.344+00:00", "level": "info", "msg": "qemu-startup     scratch    nop    #0  reward=0.0 reset=148.8s"}
+{"ts": "2026-10-11T03:30:28.177+00:00", "level": "info", "msg": "qemu-startup     checkpoint nop    #0  reward=0.0 reset=73.7s"}
+{"ts": "2026-10-11T03:33:29.529+00:00", "level": "info", "msg": "qemu-startup     scratch    egress #0  reward=None reset=144.4s"}
+{"ts": "2026-10-11T03:35:22.937+00:00", "level": "info", "msg": "qemu-startup     checkpoint egress #0  reward=None reset=75.4s"}
+{"ts": "2026-10-11T03:35:24.166+00:00", "level": "info", "msg": "done: estimated spend $0.125 -> results/bench/raw/fb-10110251-3b75.jsonl"}

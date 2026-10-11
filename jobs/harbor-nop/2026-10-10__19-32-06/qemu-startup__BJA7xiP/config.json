@@ -1,0 +1,17 @@
+{
+    "task": {
+        "path": "tasks/tb2-sample/sample/qemu-startup",
+        "source": "sample"
+    },
+    "trial_name": "qemu-startup__BJA7xiP",
+    "trials_dir": "jobs/harbor-nop/2026-10-10__19-32-06",
+    "agent": {
+        "name": "nop"
+    },
+    "environment": {
+        "type": "runta",
+        "override_cpus": 2,
+        "override_memory_mb": 4096
+    },
+    "job_id": "8d343cb7-8644-412f-b3a0-86b6d6a0a251"
+}

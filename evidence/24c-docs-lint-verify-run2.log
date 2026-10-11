@@ -1,0 +1,13 @@
+# docs-lint hits, dynamic check run 2, 2026-10-11T05:24:07Z, runta 0.2.15
+$ runta run --name fb-never-created --agent codex --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--agent' found
+$ runta run --name fb-never-created --no-shell --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--no-shell' found
+$ runta agents ls --zz-sentinel
+  -> UNKNOWN_COMMAND: error: unrecognized subcommand 'agents'
+$ runta secret rule list --runtime fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--runtime' found
+$ runta secret rule set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found
+$ runta egress set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found

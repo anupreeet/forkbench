@@ -1,0 +1,14 @@
+{"ok":true,"runtimes":7,"ms":533,"sample":["fb-tour-web-1791685512","fb-10110221-6cfe-regex-log-scrat-nop-0"]}
+{"checkpoints":1}
+dk/dist/types.d.ts-168-    name?: string | null | undefined;
+dk/dist/types.d.ts-170-    checkpointId?: string | null | undefined;
+dk/dist/types.d.ts-172-    vcpus?: number | undefined;
+dk/dist/types.d.ts-174-    memoryMib?: number | undefined;
+dk/dist/types.d.ts-176-    memoryMaxMib?: number | undefined;
+dk/dist/types.d.ts-178-    resources?: CreateRuntimeResources | undefined;
+dk/dist/types.d.ts-180-    ingressSpecs?: IngressSpec[] | undefined;
+dk/dist/types.d.ts-182-    egressPolicy?: EgressPolicy | undefined;
+dk/dist/types.d.ts-184-    idleSuspendAfterSecs?: number | null | undefined;
+dk/dist/types.d.ts-186-    runtimeAgent?: string | null | undefined;
+dk/dist/types.d.ts-188-    wait?: boolean | undefined;
+dk/dist/types.d.ts-190-    timeoutMs?: number | undefined;

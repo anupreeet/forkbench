@@ -1,0 +1,22 @@
+llm_tool_io_capture|llmToolIoCapture 0          0         
+llm_session_content|llmSessionContent 0          0         
+token_saving|tokenSaving         0          0         
+tls_passthrough|tlsPassthrough   0          0         
+vnc                              0          0         
+image                            0          0         
+repositories|repository          0          0         
+ssh_key|sshKey                   0          0         
+environment_variables|environmentVariables 0          0         
+secret_configuration|secretConfiguration 0          0         
+disk_gib|diskGib                 0          0         
+idle_suspend|idleSuspend         13         6         
+egress_policy|egressPolicy       55         13        
+ingress_spec|ingressSpec         24         4         
+checkpoint_id|checkpointId       27         10        
+
+# Method: grep -iE <pattern> over runta-sdk 0.2.1 (runta/__init__.py + runta/_internal/*.py) and
+# @runta/runta-sdk 0.2.0 (dist/*.js + dist/*.d.ts), 2026-10-11 ~02:50Z.
+# Positive controls (options the SDKs are known to support): idle_suspend, egress_policy, ingress_spec,
+# checkpoint_id, all found. Python create() has no **kwargs (inspect.signature), so unlisted options
+# can't be passed through. disk_gib can still travel inside the free-form `resources` mapping (Harbor
+# does this), so it's NOT claimed as missing.

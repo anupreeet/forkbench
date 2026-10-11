@@ -1,0 +1,9 @@
+# L-01 repro 2026-10-11T02:29:45Z: docs /docs/integrations/openai-agents/ pip tab, run verbatim in a fresh venv
+$ python -m pip install --upgrade pip
+$ python -m pip install openai-agents-runta
+ERROR: Could not find a version that satisfies the requirement openai-agents-runta (from versions: none)
+ERROR: No matching distribution found for openai-agents-runta
+exit=1
+
+$ python -m pip index versions openai-agents-runta
+ERROR: No matching distribution found for openai-agents-runta

@@ -1,0 +1,41 @@
+{
+    "id": "8d343cb7-8644-412f-b3a0-86b6d6a0a251",
+    "started_at": "2026-10-10T19:32:06.587441",
+    "updated_at": "2026-10-10T19:40:26.165280",
+    "finished_at": "2026-10-10T19:40:26.165280",
+    "n_total_trials": 3,
+    "stats": {
+        "n_completed_trials": 3,
+        "n_errored_trials": 0,
+        "n_running_trials": 0,
+        "n_pending_trials": 0,
+        "n_cancelled_trials": 0,
+        "n_retries": 0,
+        "evals": {
+            "nop__sample": {
+                "n_trials": 3,
+                "n_errors": 0,
+                "metrics": [
+                    {
+                        "mean": 0.0
+                    }
+                ],
+                "pass_at_k": {},
+                "reward_stats": {
+                    "reward": {
+                        "0.0": [
+                            "chess-best-move__n482GMP",
+                            "qemu-startup__BJA7xiP",
+                            "regex-log__cdw3wxz"
+                        ]
+                    }
+                },
+                "exception_stats": {}
+            }
+        },
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null
+    }
+}

@@ -1,0 +1,17 @@
+{"ts": "2026-10-11T02:51:01.058+00:00", "level": "info", "msg": "run fb-10110251-fcd6: 1 task(s), estimated \u2264 $0.25"}
+{"ts": "2026-10-11T02:54:47.912+00:00", "level": "info", "msg": "prepare chess-best-move/checkpoint {'golden_provision_s': 77.57588291697903, 'golden_pull_s': 75.08456066704821, 'golden_container_s': 1.5627166249905713, 'checkpoint_s': 71.57388170796912, 'golden_delete_s': 1.0524196659680456}"}
+{"ts": "2026-10-11T03:05:12.871+00:00", "level": "info", "msg": "chess-best-move  scratch    oracle #0  reward=0.0 reset=232.1s"}
+{"ts": "2026-10-11T03:12:53.856+00:00", "level": "info", "msg": "chess-best-move  checkpoint oracle #0  reward=0.0 reset=79.4s"}
+{"ts": "2026-10-11T03:20:36.913+00:00", "level": "info", "msg": "chess-best-move  checkpoint oracle #1  reward=0.0 reset=83.9s"}
+{"ts": "2026-10-11T03:30:57.893+00:00", "level": "info", "msg": "chess-best-move  scratch    oracle #1  reward=0.0 reset=209.3s"}
+{"ts": "2026-10-11T03:40:45.782+00:00", "level": "info", "msg": "chess-best-move  scratch    oracle #2  reward=0.0 reset=177.0s"}
+{"ts": "2026-10-11T03:49:16.412+00:00", "level": "info", "msg": "chess-best-move  checkpoint oracle #2  reward=0.0 reset=97.9s"}
+{"ts": "2026-10-11T03:56:50.729+00:00", "level": "info", "msg": "chess-best-move  checkpoint oracle #3  reward=0.0 reset=75.6s"}
+{"ts": "2026-10-11T04:07:15.505+00:00", "level": "info", "msg": "chess-best-move  scratch    oracle #3  reward=0.0 reset=213.3s"}
+{"ts": "2026-10-11T04:15:56.238+00:00", "level": "info", "msg": "chess-best-move  scratch    oracle #4  reward=0.0 reset=144.1s"}
+{"ts": "2026-10-11T04:22:28.685+00:00", "level": "info", "msg": "chess-best-move  checkpoint oracle #4  ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received | delete failed: ApiError('HTTP request failed: ')"}
+{"ts": "2026-10-11T04:31:51.218+00:00", "level": "info", "msg": "chess-best-move  scratch    nop    #0  reward=0.0 reset=223.7s"}
+{"ts": "2026-10-11T04:39:13.288+00:00", "level": "info", "msg": "chess-best-move  checkpoint nop    #0  reward=0.0 reset=95.5s"}
+{"ts": "2026-10-11T04:42:23.974+00:00", "level": "info", "msg": "chess-best-move  scratch    egress #0  reward=None reset=144.9s"}
+{"ts": "2026-10-11T04:44:10.927+00:00", "level": "info", "msg": "chess-best-move  checkpoint egress #0  reward=None reset=73.8s"}
+{"ts": "2026-10-11T04:44:13.189+00:00", "level": "info", "msg": "done: estimated spend $0.319 -> results/bench/raw/fb-10110251-fcd6.jsonl"}

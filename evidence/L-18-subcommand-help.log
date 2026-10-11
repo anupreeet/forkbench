@@ -1,0 +1,93 @@
+[2026-10-11T01:44:41Z] runta 0.2.15
+
+A) runta run --help   (stdout not a TTY -> JSON mode)
+"runta"
+["endpoint","token","config","json","verbose"]
+
+B) runta help run   (JSON mode)
+"run"
+["name","publish","cpus","memory","memory-max","idle-mode","idle-timeout","llm-tool-io-capture","llm-session-content-capture","tls-passthrough-host","vnc","llm-token-saving-json-array","llm-token-saving-log","llm-token-saving-search-results","llm-token-saving-git-diff","image","model-provider-protocol","runtime-sign-in","disk-size-gib","secret-config-file","ssh-key","wait","timeout-secs"]
+
+C) runta run --help --json false   (human mode)
+{
+  "action": "help",
+  "cli_version": "0.2.15",
+  "command": {
+    "about": "Official command line interface for Runta.\n\nNew here? Run 'runta login' to sign in with your Runta account. Already set up? Run 'runta help' to explore all available commands.\n\nWorking with an AI agent? Install the official Runta skills for Claude Code, Cursor, and Codex to help your assistant use the Runta CLI and APIs correctly:\nhttps://runta.com/docs/reference/agent-skills/",
+    "aliases": [],
+    "args": [
+      {
+        "help": "runta-api endpoint URL (default: https://api.runta.com) — http:// for plaintext, https:// for TLS (system roots) [env: RUNTA_ENDPOINT]",
+        "id": "endpoint",
+        "long": "endpoint",
+        "possible_values": [],
+        "required": false,
+        "short": null,
+        "value_names": [
+          "ENDPOINT"
+        ]
+      },
+      {
+        "help": "Bearer token for runta-api [env: RUNTA_TOKEN]",
+        "id": "token",
+        "long": "token",
+        "possible_values": [],
+        "required": false,
+        "short": null,
+        "value_names": [
+          "TOKEN"
+        ]
+      },
+      {
+        "help": "TOML config file path (default: ~/.config/runta/config.toml) [env: RUNTA_CONFIG]",
+        "id": "config",
+        "long": "config",
+        "possible_values": [],
+        "required": false,
+        "short": null,
+        "value_names": [
+          "PATH"
+        ]
+      },
+
+D) script(1) with a real pseudo-TTY: runta run --help
+^DRequest creation of a new runtime
+
+[1m[4mUsage:[0m [1mrunta run[0m [OPTIONS]
+
+[1m[4mOptions:[0m
+      [1m--name[0m <NAME>
+          Runtime name (random if omitted)
+  [1m-p[0m, [1m--publish[0m <SPEC>
+          Repeatable ingress rule <port>/http|https
+      [1m--cpus[0m <N>
+          Number of vCPUs (uses the Runtime Image recommendation when omitted)
+      [1m--json[0m
+          Enable machine-readable JSON output (implied when stdout is not a TTY, except interactive exec and stream download)
+      [1m--memory[0m <MIB>
+          Memory in MiB (uses the Runtime Image recommendation when omitted)
+      [1m--memory-max[0m <MIB>
+          Maximum memory in MiB for auto-scaling (must be at least --memory)
+  [1m-v[0m, [1m--verbose[0m...
+          Enable verbose debug logging; repeat for trace logging
+      [1m--idle-mode[0m <IDLE_MODE>
+          Idle policy: disabled, suspend-only, or suspend-and-wakeup [default: disabled] [possible values: disabled, suspend-only, suspend-and-wakeup]
+      [1m--idle-timeout[0m <SECS>
+          Idle seconds before suspension (required with a suspend idle mode)
+      [1m--llm-tool-io-capture[0m
+          Capture OpenAI/Anthropic tool input/output events for this runtime
+      [1m--llm-session-content-capture[0m
+          Capture user, assistant, and tool conversation content
+      [1m--tls-passthrough-host[0m <HOST>
+          Repeatable HTTPS host pattern that must bypass TLS interception
+      [1m--vnc[0m
+          Enable the on-demand XFCE VNC desktop after startup
+      [1m--llm-token-saving-json-array[0m
+          Compress large JSON-array tool outputs for this runtime
+      [1m--llm-token-saving-log[0m
+          Compress large log tool outputs for this runtime
+      [1m--llm-token-saving-search-results[0m
+          Compress large search-result tool outputs for this runtime
+      [1m--llm-token-saving-git-diff[0m
+          Compress large Git-diff tool outputs for this runtime
+      [1m--image[0m <ID>

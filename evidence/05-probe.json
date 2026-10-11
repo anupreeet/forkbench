@@ -1,0 +1,129 @@
+{
+  "tag": "fb-probe-1791684933",
+  "started_utc": "2026-10-11T02:15:33.679431+00:00",
+  "create_s": 83.16,
+  "runtime_id": "01a128be-7a6a-7790-82ec-5ad181ebaa15",
+  "q1_exec_true_x20": {
+    "wall_median_s": 1.071,
+    "wall_min_s": 0.988,
+    "wall_max_s": 2.228,
+    "server_duration_median_s": 1.0694256254646461,
+    "server_duration_type": "float"
+  },
+  "q2_pid1": "systemd\n    PID    PGID     SID COMMAND\n   2888    2887    1259 ps",
+  "q2_start": {
+    "nohup_amp": {
+      "cmd": "nohup sleep 600 >/dev/null 2>&1 &",
+      "exit": 0,
+      "wall_s": 1.069,
+      "server_s": 1.0672697919653729,
+      "out": "",
+      "err": ""
+    },
+    "nohup_amp_disown": {
+      "cmd": "nohup sleep 601 >/dev/null 2>&1 & disown",
+      "exit": 0,
+      "wall_s": 1.117,
+      "server_s": 1.1156612500199117,
+      "out": "",
+      "err": ""
+    },
+    "setsid": {
+      "cmd": "setsid nohup sleep 602 >/dev/null 2>&1 < /dev/null &",
+      "exit": 0,
+      "wall_s": 1.157,
+      "server_s": 1.1567060829838738,
+      "out": "",
+      "err": ""
+    },
+    "setsid_fork": {
+      "cmd": "setsid -f sleep 603 >/dev/null 2>&1 < /dev/null",
+      "exit": 0,
+      "wall_s": 1.04,
+      "server_s": 1.0396872090059333,
+      "out": "",
+      "err": ""
+    },
+    "systemd_run": {
+      "cmd": "systemd-run --unit=fbprobe sleep 604 2>&1 || echo NO_SYSTEMD",
+      "exit": 0,
+      "wall_s": 1.281,
+      "server_s": 1.2797654590103775,
+      "out": "Running as unit: fbprobe.service; invocation ID: a934b6531fbd485c94a17022099303cd",
+      "err": ""
+    }
+  },
+  "q2_alive_after_3s": "2922 sleep 603\n2930 /usr/bin/sleep 604",
+  "q2_alive_after_18s": "2922 sleep 603\n2930 /usr/bin/sleep 604",
+  "q3_default_open": {
+    "https://example.com": "200 exit=0",
+    "https://1.1.1.1": "301 exit=0",
+    "https://pypi.org": "200 exit=0"
+  },
+  "q3_sdk": {
+    "allow_hostname_example.com": {
+      "allowed_hosts": [
+        "example.com"
+      ],
+      "accepted": true,
+      "policy_read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['example.com'], denied_hosts=[])",
+      "reach": {
+        "https://example.com": "200 exit=0",
+        "https://1.1.1.1": "301 exit=0",
+        "https://pypi.org": "200 exit=0"
+      }
+    },
+    "allow_ip_1.1.1.1": {
+      "allowed_hosts": [
+        "1.1.1.1"
+      ],
+      "accepted": true,
+      "policy_read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['1.1.1.1'], denied_hosts=[])",
+      "reach": {
+        "https://example.com": "200 exit=0",
+        "https://1.1.1.1": "301 exit=0",
+        "https://pypi.org": "200 exit=0"
+      }
+    },
+    "allow_cidr_1.1.1.0/24": {
+      "allowed_hosts": [
+        "1.1.1.0/24"
+      ],
+      "accepted": true,
+      "policy_read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=['1.1.1.0/24'], denied_hosts=[])",
+      "reach": {
+        "https://example.com": "200 exit=0",
+        "https://1.1.1.1": "301 exit=0",
+        "https://pypi.org": "200 exit=0"
+      }
+    },
+    "allow_empty_list": {
+      "allowed_hosts": [],
+      "accepted": true,
+      "policy_read_back": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=[], denied_hosts=[])",
+      "reach": {
+        "https://example.com": "200 exit=0",
+        "https://1.1.1.1": "000 exit=35",
+        "https://pypi.org": "000 exit=35"
+      }
+    }
+  },
+  "q3_reset_open": {
+    "https://example.com": "200 exit=0",
+    "https://1.1.1.1": "000 exit=35",
+    "https://pypi.org": "000 exit=35"
+  },
+  "q3_cli": {
+    "ip": {
+      "exit": 0,
+      "stdout": "_size_gib\": 32,\n    \"owner_user_id\": \"<redacted>\",\n    \"revision\": 8,\n    \"secret_configuration\": [],\n    \"ssh_enabled\": true,\n    \"status\": \"running\",\n    \"tls_passthrough_hosts\": [],\n    \"updated_at\": \"2026-10-11T02:18:33Z\",\n    \"vcpus\": 2,\n    \"vnc_connection\": {\n      \"hostname\": \"vnc.runta.com\",\n      \"port\": 5900,\n      \"security_type\": \"X509Plain\",\n      \"username\": \"runta\"\n    },\n    \"vnc_enabled\": false,\n    \"vnc_error_code\": null,\n    \"vnc_ready\": false\n  }\n}\n",
+      "stderr": ""
+    },
+    "cidr": {
+      "exit": 0,
+      "stdout": "_size_gib\": 32,\n    \"owner_user_id\": \"<redacted>\",\n    \"revision\": 9,\n    \"secret_configuration\": [],\n    \"ssh_enabled\": true,\n    \"status\": \"running\",\n    \"tls_passthrough_hosts\": [],\n    \"updated_at\": \"2026-10-11T02:18:36Z\",\n    \"vcpus\": 2,\n    \"vnc_connection\": {\n      \"hostname\": \"vnc.runta.com\",\n      \"port\": 5900,\n      \"security_type\": \"X509Plain\",\n      \"username\": \"runta\"\n    },\n    \"vnc_enabled\": false,\n    \"vnc_error_code\": null,\n    \"vnc_ready\": false\n  }\n}\n",
+      "stderr": ""
+    }
+  },
+  "delete_s": 1.19
+}

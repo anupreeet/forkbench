@@ -1,0 +1,25 @@
+# Local reproductions 2026-10-11T02:14:58Z | runta CLI 0.2.15 | runta-sdk 0.2.1
+
+## L-03 (2nd repro, fresh venv): system Python 3.9 + pip install runta-sdk
+ERROR: Could not find a version that satisfies the requirement runta-sdk (from versions: none)
+ERROR: No matching distribution found for runta-sdk
+exit=1
+
+## L-14: SDK create() with image= (REST has image.id, CLI has --image)
+TypeError: AsyncRuntimeManager.create() got an unexpected keyword argument 'image'
+
+## L-16: SDK create() with runtime_agent= (listed in the SDK docs page)
+TypeError: AsyncRuntimeManager.create() got an unexpected keyword argument 'runtime_agent'
+
+## L-18 (2nd repro): subcommand --help with non-TTY stdout
+run         --help -> command.name=runta
+exec        --help -> command.name=runta
+checkpoint  --help -> command.name=runta
+egress      --help -> command.name=runta
+help run       -> command.name=run
+
+## L-20 (2nd repro): checkpoint ls --all
+{"code":"UNKNOWN_ARGUMENT","message":"error: unexpected argument '--all' found"}
+
+## runta ps -a after local checks (must be empty: nothing was created)
+0

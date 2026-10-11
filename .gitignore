@@ -1,0 +1,15 @@
+# secrets
+.env
+.env.*
+!.env.example
+# python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# downloaded task repos (untrusted, re-fetchable)
+tasks/
+# large raw run data (summaries are committed separately)
+results/raw/

@@ -1,0 +1,17 @@
+{"ts": "2026-10-11T02:51:01.057+00:00", "level": "info", "msg": "run fb-10110251-c8ff: 1 task(s), estimated \u2264 $0.25"}
+{"ts": "2026-10-11T02:54:47.965+00:00", "level": "info", "msg": "prepare build-cython-ext/checkpoint {'golden_provision_s': 77.9510662080138, 'golden_pull_s': 64.487167083018, 'golden_container_s': 1.2912616669782437, 'checkpoint_s': 82.28022804198554, 'golden_delete_s': 0.8949498339788988}"}
+{"ts": "2026-10-11T03:10:15.260+00:00", "level": "info", "msg": "build-cython-ext scratch    oracle #0  reward=0.0 reset=216.2s"}
+{"ts": "2026-10-11T03:24:14.447+00:00", "level": "info", "msg": "build-cython-ext checkpoint oracle #0  reward=0.0 reset=124.7s"}
+{"ts": "2026-10-11T03:36:46.359+00:00", "level": "info", "msg": "build-cython-ext checkpoint oracle #1  reward=0.0 reset=71.9s"}
+{"ts": "2026-10-11T03:50:31.441+00:00", "level": "info", "msg": "build-cython-ext scratch    oracle #1  reward=0.0 reset=136.9s"}
+{"ts": "2026-10-11T04:04:59.070+00:00", "level": "info", "msg": "build-cython-ext scratch    oracle #2  reward=0.0 reset=139.7s"}
+{"ts": "2026-10-11T04:17:39.928+00:00", "level": "info", "msg": "build-cython-ext checkpoint oracle #2  reward=0.0 reset=77.5s"}
+{"ts": "2026-10-11T04:22:33.403+00:00", "level": "info", "msg": "build-cython-ext checkpoint oracle #3  ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received | delete failed: ApiError('HTTP request failed: ')"}
+{"ts": "2026-10-11T04:37:39.118+00:00", "level": "info", "msg": "build-cython-ext scratch    oracle #3  reward=0.0 reset=212.2s"}
+{"ts": "2026-10-11T04:47:13.974+00:00", "level": "info", "msg": "build-cython-ext scratch    oracle #4  reward=0.0 reset=140.8s"}
+{"ts": "2026-10-11T05:00:01.023+00:00", "level": "info", "msg": "build-cython-ext checkpoint oracle #4  reward=0.0 reset=79.2s"}
+{"ts": "2026-10-11T05:09:26.164+00:00", "level": "info", "msg": "build-cython-ext scratch    nop    #0  reward=0.0 reset=216.0s"}
+{"ts": "2026-10-11T05:16:27.215+00:00", "level": "info", "msg": "build-cython-ext checkpoint nop    #0  reward=0.0 reset=81.3s"}
+{"ts": "2026-10-11T05:19:27.023+00:00", "level": "info", "msg": "build-cython-ext scratch    egress #0  reward=None reset=143.3s"}
+{"ts": "2026-10-11T05:21:41.181+00:00", "level": "info", "msg": "build-cython-ext checkpoint egress #0  reward=None reset=86.1s"}
+{"ts": "2026-10-11T05:21:42.236+00:00", "level": "info", "msg": "done: estimated spend $0.425 -> results/bench/raw/fb-10110251-c8ff.jsonl"}

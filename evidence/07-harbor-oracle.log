@@ -1,0 +1,20 @@
+  3/3 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:10:45 0:00:00
+sample • oracle
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      3 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     3 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 10m 45s
+Results written to jobs/harbor-oracle/2026-10-10__19-21-15/result.json
+Inspect results by running `harbor view jobs/harbor-oracle`
+Share results by running `harbor upload jobs/harbor-oracle/2026-10-10__19-21-15`
+

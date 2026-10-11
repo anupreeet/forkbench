@@ -1,0 +1,116 @@
+{
+    "id": "dc500709-5f03-4808-a534-5cb4f427837c",
+    "task_name": "chess-best-move",
+    "trial_name": "chess-best-move__n482GMP",
+    "trial_uri": "file://./jobs/harbor-nop/2026-10-10__19-32-06/chess-best-move__n482GMP",
+    "task_id": {
+        "path": "tasks/tb2-sample/sample/chess-best-move"
+    },
+    "source": "sample",
+    "task_checksum": "f75ce4b6d83603dec44a49bc0548196c18d4308a6db3c07bbfcf53aa4324e754",
+    "config": {
+        "task": {
+            "path": "tasks/tb2-sample/sample/chess-best-move",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": "sample"
+        },
+        "trial_name": "chess-best-move__n482GMP",
+        "trials_dir": "jobs/harbor-nop/2026-10-10__19-32-06",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "nop",
+            "import_path": null,
+            "model_name": null,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [],
+            "kwargs": {},
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "runta",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": 2,
+            "override_memory_mb": 4096,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "disable": false
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "8d343cb7-8644-412f-b3a0-86b6d6a0a251",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "nop",
+        "version": "1.0.0",
+        "model_info": null
+    },
+    "agent_result": {
+        "n_input_tokens": null,
+        "n_cache_tokens": null,
+        "n_output_tokens": null,
+        "cost_usd": null,
+        "model_usage": null,
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.0
+        }
+    },
+    "verifier_environment_mode": "shared",
+    "exception_info": null,
+    "started_at": "2026-10-11T02:32:06.607408Z",
+    "finished_at": "2026-10-11T02:40:26.163460Z",
+    "environment_setup": {
+        "started_at": "2026-10-11T02:32:06.628918Z",
+        "finished_at": "2026-10-11T02:34:40.543438Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-10-11T02:34:40.543498Z",
+        "finished_at": "2026-10-11T02:34:40.543572Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-10-11T02:34:40.543706Z",
+        "finished_at": "2026-10-11T02:34:40.543850Z"
+    },
+    "verifier": {
+        "started_at": "2026-10-11T02:34:55.766407Z",
+        "finished_at": "2026-10-11T02:40:23.588502Z"
+    },
+    "step_results": null
+}

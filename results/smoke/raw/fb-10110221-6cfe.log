@@ -1,0 +1,1 @@
+{"ts": "2026-10-11T02:25:31.514+00:00", "level": "info", "msg": "prepare regex-log/checkpoint {'golden_provision_s': 88.05870733299525, 'golden_pull_s': 58.620123042026535, 'golden_container_s': 1.86711741698673, 'checkpoint_s': 70.35299579199636, 'golden_delete_s': 0.9521490419865586}"}

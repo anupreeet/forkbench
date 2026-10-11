@@ -1,0 +1,42 @@
+[2026-10-11T02:11:31Z] runta 0.2.15, source runtime of the checkpoint was deleted at 02:07:28Z
+$ runta checkpoint ls
+{
+  "action": "checkpoint-list",
+  "checkpoints": [
+    {
+      "created_at": "2026-10-11T02:05:58Z",
+      "cur_memory_mib": 4096,
+      "display_name": "fb-spike-1791684197-ckpt",
+      "id": "01a128b5-b3ee-76f9-b5d8-76bef7a160e4",
+      "max_memory_mib": 4096,
+      "min_memory_mib": 4096,
+      "safe_error_code": null,
+      "state": "ready",
+      "vcpus": 2
+    }
+  ]
+}
+
+$ runta checkpoint ls --all
+{
+  "error": {
+    "code": "UNKNOWN_ARGUMENT",
+    "kind": "cli",
+    "message": "error: unexpected argument '--all' found\n\nUsage: runta checkpoint ls [OPTIONS]\n\nFor more information, try '--help'.\n",
+    "required_action": {
+      "command": "runta help --json",
+      "type": "run_command"
+    },
+    "required_arguments": [
+      "--all"
+    ]
+  }
+}
+
+$ python: AsyncRunta().checkpoints.list()
+01a128b5-b3ee-76f9-b5d8-76bef7a160e4 fb-spike-1791684197-ckpt CheckpointState.READY
+
+$ runta help checkpoint ls   (flags the CLI itself advertises)
+{"name":"ls","flags":[]}
+$ runta help checkpoint   (subcommands)
+["create","restore","ls","rm"]

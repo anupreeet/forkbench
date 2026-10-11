@@ -1,0 +1,38 @@
+{
+  "name": "fb-xray-1791687249",
+  "started_utc": "2026-10-11T02:54:09.512821+00:00",
+  "capture_flag_on_runtime": true,
+  "upstream": "401\n{\n  \"error\": {\n    \"message\": \"Incorrect API key provided: sk-fake-****************test. You can find your API key at https://platform.openai.com/account/api-keys.\",\n    \"type\": \"invalid_request_error",
+  "analyze_after_15s": {
+    "calls_with_analysis_issues": 0,
+    "calls_with_findings": 0,
+    "estimated_savings_tokens": 0,
+    "estimated_tokens": 0,
+    "total_calls": 0,
+    "truncated_calls": 0
+  },
+  "analyze_after_30s": {
+    "calls_with_analysis_issues": 0,
+    "calls_with_findings": 0,
+    "estimated_savings_tokens": 0,
+    "estimated_tokens": 0,
+    "total_calls": 0,
+    "truncated_calls": 0
+  },
+  "analyze_after_60s": {
+    "calls_with_analysis_issues": 0,
+    "calls_with_findings": 0,
+    "estimated_savings_tokens": 0,
+    "estimated_tokens": 0,
+    "total_calls": 0,
+    "truncated_calls": 0
+  },
+  "analyze_after_90s": {
+    "calls_with_analysis_issues": 0,
+    "calls_with_findings": 0,
+    "estimated_savings_tokens": 0,
+    "estimated_tokens": 0,
+    "total_calls": 0,
+    "truncated_calls": 0
+  }
+}

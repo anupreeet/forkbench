@@ -1,0 +1,17 @@
+{"ts": "2026-10-11T02:51:01.058+00:00", "level": "info", "msg": "run fb-10110251-fd0a: 1 task(s), estimated \u2264 $0.25"}
+{"ts": "2026-10-11T02:54:40.339+00:00", "level": "info", "msg": "prepare regex-log/checkpoint {'golden_provision_s': 77.57610166695667, 'golden_pull_s': 40.85942391701974, 'golden_container_s': 1.28715208300855, 'checkpoint_s': 98.61770983302267, 'golden_delete_s': 0.9374629580415785}"}
+{"ts": "2026-10-11T03:02:27.835+00:00", "level": "info", "msg": "regex-log        scratch    oracle #0  reward=0.0 reset=118.6s"}
+{"ts": "2026-10-11T03:10:32.690+00:00", "level": "info", "msg": "regex-log        checkpoint oracle #0  reward=0.0 reset=130.0s"}
+{"ts": "2026-10-11T03:17:47.087+00:00", "level": "info", "msg": "regex-log        checkpoint oracle #1  reward=0.0 reset=89.5s"}
+{"ts": "2026-10-11T03:26:20.968+00:00", "level": "info", "msg": "regex-log        scratch    oracle #1  reward=0.0 reset=168.7s"}
+{"ts": "2026-10-11T03:34:09.901+00:00", "level": "info", "msg": "regex-log        scratch    oracle #2  reward=0.0 reset=119.7s"}
+{"ts": "2026-10-11T03:41:44.280+00:00", "level": "info", "msg": "regex-log        checkpoint oracle #2  reward=0.0 reset=102.5s"}
+{"ts": "2026-10-11T03:44:42.319+00:00", "level": "info", "msg": "regex-log        checkpoint oracle #3  reward=1.0 reset=77.4s"}
+{"ts": "2026-10-11T03:52:32.697+00:00", "level": "info", "msg": "regex-log        scratch    oracle #3  reward=0.0 reset=118.8s"}
+{"ts": "2026-10-11T04:00:08.719+00:00", "level": "info", "msg": "regex-log        scratch    oracle #4  reward=0.0 reset=110.4s"}
+{"ts": "2026-10-11T04:07:17.182+00:00", "level": "info", "msg": "regex-log        checkpoint oracle #4  reward=0.0 reset=76.8s"}
+{"ts": "2026-10-11T04:14:52.219+00:00", "level": "info", "msg": "regex-log        scratch    nop    #0  reward=0.0 reset=111.0s"}
+{"ts": "2026-10-11T04:22:30.989+00:00", "level": "info", "msg": "regex-log        checkpoint nop    #0  ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received | delete failed: ApiError('HTTP request failed: ')"}
+{"ts": "2026-10-11T04:26:14.453+00:00", "level": "info", "msg": "regex-log        scratch    egress #0  reward=None reset=187.1s"}
+{"ts": "2026-10-11T04:28:12.290+00:00", "level": "info", "msg": "regex-log        checkpoint egress #0  reward=None reset=80.7s"}
+{"ts": "2026-10-11T04:28:13.406+00:00", "level": "info", "msg": "done: estimated spend $0.274 -> results/bench/raw/fb-10110251-fd0a.jsonl"}

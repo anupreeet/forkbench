@@ -1,0 +1,5 @@
+{"label": "allow example.com", "converged_after_s": 28.1, "n_samples": 8}
+{"label": "open (reset)", "converged_after_s": 19.6, "n_samples": 6}
+{"label": "allow nothing", "converged_after_s": 20.1, "n_samples": 6}
+{"label": "allow IP 1.1.1.1", "converged_after_s": 22.0, "n_samples": 7}
+{"label": "allow CIDR 1.0.0.0/24", "converged_after_s": 25.8, "n_samples": 8}

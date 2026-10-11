@@ -1,0 +1,356 @@
+{
+  "started_utc": "2026-10-11T02:47:02.085810+00:00",
+  "url": "https://github.com/astral-sh/uv/releases/download/0.7.13/uv-x86_64-unknown-linux-gnu.tar.gz",
+  "rounds": [
+    {
+      "round": 1,
+      "utc": "02:50:24",
+      "A_gateway": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002037,
+        "exit": 28,
+        "ok": false
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.182966,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 7.303091,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 2,
+      "utc": "02:50:37",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 7.61909,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.196845,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 13.129691,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 3,
+      "utc": "02:51:09",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.236598,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.160294,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 14.831276,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 4,
+      "utc": "02:51:33",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 7.647628,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.182515,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 8.712449,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 5,
+      "utc": "02:52:01",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.242315,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.190071,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 6.661111,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 6,
+      "utc": "02:52:35",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 9.6555,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.187412,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 8.436915,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 7,
+      "utc": "02:53:02",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.169203,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.166414,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 7.957326,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 8,
+      "utc": "02:53:36",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 11.028752,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.382165,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 9.006519,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 9,
+      "utc": "02:54:00",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.140954,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.17623,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 5.797637,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 10,
+      "utc": "02:54:35",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 9.894271,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.192292,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 9.449833,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 11,
+      "utc": "02:55:18",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.206659,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.218357,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 24.02515,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 12,
+      "utc": "02:55:53",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 8.929828,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.218623,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 28.541223,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 13,
+      "utc": "02:56:08",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.213271,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.180834,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 13.957206,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 14,
+      "utc": "02:56:48",
+      "A_gateway": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 10.967023,
+        "exit": 0,
+        "ok": true
+      },
+      "B_passthrough": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.178534,
+        "exit": 0,
+        "ok": true
+      },
+      "M_mac": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 23.976527,
+        "exit": 0,
+        "ok": true
+      }
+    }
+  ]
+}

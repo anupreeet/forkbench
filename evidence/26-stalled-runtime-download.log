@@ -1,0 +1,12 @@
+host-level: code=200 size=17791244 t=7.853104s
+
+== fb-10110251-c8ff-build-cython-ext-scrat-oracle-1 at 03:43:15
+host: code=000 size=0 t=60.002646s curl: (28) Operation timed out after 60002 milliseconds with 0 bytes received
+
+OCI runtime exec failed: exec failed: unable to start container process: exec: "curl": executable file not found in $PATH
+ 
+== fb-10110251-fcd6-chess-best-move-check-oracle-2 at 03:44:22
+     39 su -l root -c env 'AWS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt' 'CARGO_HTTP_CAINFO=/etc/ssl/certs/ca-certificates.crt' 'CURL_CA_BUNDLE=/e
+     39 docker exec task bash -c mkdir -p /logs/verifier && bash /tests/test.sh > /logs/verifier/test-output.txt 2>&1
+host: code=200 size=17791244 t=8.883707s 
+container: code=200 size=17791244 t=0.219419s 

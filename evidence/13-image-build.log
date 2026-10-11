@@ -1,0 +1,67 @@
+[02:32:11] runta 0.2.15
+$ cat Dockerfile
+FROM ghcr.io/laude-institute/terminal-bench/regex-log:2.0
+$ runta image build --name fb-regex-log-img --file scripts/image-spike/Dockerfile
+Note: Dockerfile ENTRYPOINT and CMD run under Runta init; restart the Runtime after the process exits.
+{
+  "action": "image-build",
+  "build": {
+    "architecture": "x86_64",
+    "attempt": 1,
+    "completed_at": "2026-10-11T02:35:53Z",
+    "created_at": "2026-10-11T02:32:13Z",
+    "id": "01a128cd-b904-7703-b105-cc1f6bf876a6",
+    "name": "fb-regex-log-img",
+    "runtime_bundle_index_digest": "sha256:1e08067124ddadc13d974c8bb867d65724f0ae0ad93b0ae308a6330846b686bd",
+    "runtime_bundle_manifest_digest": "sha256:3c13738c7a338b353a4df95a532cd566cd50fe6c10ee97284b7098cf932f105f",
+    "runtime_image_id": "custom-01a128cd-b904-7703-b105-cc1f6bf876a6",
+    "safe_error_code": null,
+    "status": "succeeded",
+    "updated_at": "2026-10-11T02:35:53Z"
+  }
+}
+exit= after 224 s
+$ runta image ls
+{
+  "action": "image-list",
+  "images": [
+    {
+      "created_at": "2026-10-11T02:35:53Z",
+      "disk": {
+        "default_gib": 32,
+        "maximum_gib": 256,
+        "minimum_gib": 32,
+        "step_gib": 1
+      },
+      "exposed_ports": [],
+      "id": "custom-01a128cd-b904-7703-b105-cc1f6bf876a6",
+      "is_custom": true,
+      "model_provider": null,
+      "name": "fb-regex-log-img",
+      "recommended_resources": {
+        "memory_mib": 2048,
+        "vcpus": 2
+      }
+    }
+  ]
+}
+$ runta image build ls
+{
+  "action": "image-build-list",
+  "builds": [
+    {
+      "architecture": "x86_64",
+      "attempt": 1,
+      "completed_at": "2026-10-11T02:35:53Z",
+      "created_at": "2026-10-11T02:32:13Z",
+      "id": "01a128cd-b904-7703-b105-cc1f6bf876a6",
+      "name": "fb-regex-log-img",
+      "runtime_bundle_index_digest": "sha256:1e08067124ddadc13d974c8bb867d65724f0ae0ad93b0ae308a6330846b686bd",
+      "runtime_bundle_manifest_digest": "sha256:3c13738c7a338b353a4df95a532cd566cd50fe6c10ee97284b7098cf932f105f",
+      "runtime_image_id": "custom-01a128cd-b904-7703-b105-cc1f6bf876a6",
+      "safe_error_code": null,
+      "status": "succeeded",
+      "updated_at": "2026-10-11T02:35:53Z"
+    }
+  ]
+}

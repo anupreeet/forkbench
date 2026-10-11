@@ -1,0 +1,17 @@
+[2026-10-11T02:25:20Z] runta 0.2.15
+
+## What the JSON help says about --wait (runta help run):
+{"help":"Poll until the runtime can accept exec, or fail on error/timeout","id":"wait","long":"wait","possible_values":["true","false"],"required":false,"short":null,"value_names":["WAIT"]}
+
+## $ runta run --name fb-never-created --wait true
+{"code":"UNKNOWN_ARGUMENT","message":"error: unexpected argument 'true' found"}
+
+## What the JSON help says about --value-stdin (runta help secret set):
+{"help":"Read the secret value from stdin","id":"value_stdin","long":"value-stdin","possible_values":["true","false"],"required":false,"short":null,"value_names":["VALUE_STDIN"]}
+
+## $ echo x | runta secret set --value-stdin true fb-never-created
+{"code":"UNKNOWN_ARGUMENT","message":"error: unexpected argument 'fb-never-created' found"}
+
+## nothing was created:
+[]
+[]

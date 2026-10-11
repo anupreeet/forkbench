@@ -1,0 +1,20 @@
+  3/3 Mean: 0.000 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0:08:19 0:00:00
+sample • nop
+┏━━━━━━━━┳━━━━━━━━━━━━┳━━━━━━━┓
+┃ Trials ┃ Exceptions ┃  Mean ┃
+┡━━━━━━━━╇━━━━━━━━━━━━╇━━━━━━━┩
+│      3 │          0 │ 0.000 │
+└────────┴────────────┴───────┘
+
+┏━━━━━━━━┳━━━━━━━┓
+┃ Reward ┃ Count ┃
+┡━━━━━━━━╇━━━━━━━┩
+│ 0.0    │     3 │
+└────────┴───────┘
+
+Job Info
+Total runtime: 8m 19s
+Results written to jobs/harbor-nop/2026-10-10__19-32-06/result.json
+Inspect results by running `harbor view jobs/harbor-nop`
+Share results by running `harbor upload jobs/harbor-nop/2026-10-10__19-32-06`
+

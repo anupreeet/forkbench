@@ -1,0 +1,37 @@
+[02:40:13] runta 0.2.15
+[02:40:13] $ runta run --name fb-wake-1791686413 --cpus 1 --memory 1024 -p 8080/https --idle-mode suspend-and-wakeup --idle-timeout 30 --wait
+{"status":"running","idle":{"mode":"suspend_and_wakeup","suspend_after_secs":30}}
+[02:41:33] URL from 'runta ports ls': https://8080-01a128d5-0d48-70e2-acfd-82e7ffbd4975.runta.dev/
+[02:41:35] precondition try 1: inside=200 public=404
+[02:41:43] precondition try 2: inside=200 public=200
+[02:41:44] inspect idle policy: {"mode":"suspend_and_wakeup","suspend_after_secs":30}
+[02:43:36] status after 111 s without traffic: suspended
+[02:43:36] --- wake attempts: one request every ~10 s for 3 min (max-time 120 s each)
+[02:43:38] t=+1s GET -> 404 0.457935s body= | status=suspended
+[02:43:49] t=+12s GET -> 404 0.170674s body= | status=suspended
+[02:44:00] t=+23s GET -> 404 0.334918s body= | status=suspended
+[02:44:12] t=+35s GET -> 404 0.295217s body= | status=suspended
+[02:44:23] t=+46s GET -> 404 0.332718s body= | status=suspended
+[02:44:36] t=+58s GET -> 404 0.389142s body= | status=suspended
+[02:44:51] t=+74s GET -> 404 3.607561s body= | status=suspended
+[02:45:03] t=+86s GET -> 404 0.238989s body= | status=suspended
+[02:45:15] t=+97s GET -> 404 0.191934s body= | status=suspended
+[02:45:26] t=+109s GET -> 404 0.223243s body= | status=suspended
+[02:45:38] t=+121s GET -> 404 0.202413s body= | status=suspended
+[02:45:49] t=+132s GET -> 404 0.165101s body= | status=suspended
+[02:46:01] t=+144s GET -> 404 0.328948s body= | status=suspended
+[02:46:13] t=+155s GET -> 404 0.203347s body= | status=suspended
+[02:46:25] t=+168s GET -> 404 0.357714s body= | status=suspended
+[02:46:36] t=+179s GET -> 404 0.315661s body= | status=suspended
+[02:46:47] --- still suspended: manual resume
+{"ok":true}
+[02:48:23] status 95 s after 'runta resume': running
+[02:48:23] after resume GET -> 404 0.297917s body=
+[02:48:32] http.server process alive after resume: {
+  "error": {
+    "code": "SDK",
+    "kind": "sdk",
+    "message": "websocket error: HTTP error: 429 Too Many Requests"
+  }
+}
+[02:48:35] cleanup: runtimes named fb-wake-1791686413 left: []

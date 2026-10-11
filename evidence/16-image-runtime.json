@@ -1,0 +1,36 @@
+{
+  "name": "fb-img-1791686425",
+  "image": "custom-01a128cd-b904-7703-b105-cc1f6bf876a6",
+  "started_utc": "2026-10-11T02:40:25.934575+00:00",
+  "cli_create_s": 71.1,
+  "cli_create_exit": 0,
+  "cli_create_tail": "\"secret_configuration\": [],\n    \"ssh_enabled\": true,\n    \"status\": \"running\",\n    \"tls_passthrough_hosts\": [],\n    \"updated_at\": \"2026-10-11T02:40:32Z\",\n    \"vcpus\": 2,\n    \"vnc_connection\": {\n      \"hostname\": \"vnc.runta.com\",\n      \"port\": 5900,\n      \"security_type\": \"X509Plain\",\n      \"username\": \"runta\"\n    },\n    \"vnc_enabled\": false,\n    \"vnc_error_code\": null,\n    \"vnc_ready\": false\n  }\n}\n",
+  "env": {
+    "cmd": "head -2 /etc/os-release; echo PWD=$(pwd); ls -la /app | head; command -v python3",
+    "exit": 0,
+    "s": 1.2,
+    "out": "PRETTY_NAME=\"Ubuntu 24.04.3 LTS\"\nNAME=\"Ubuntu\"\nPWD=/app\ntotal 8\ndrwxr-xr-x  2 root root 4096 Sep 13  2025 .\ndrwxr-xr-x 18 root root 4096 Oct 11 02:34 ..\nroot\nrunta-container",
+    "err": ""
+  },
+  "unpack": {
+    "cmd": "mkdir -p /solution /tests /logs/verifier /logs/agent && tar -xf /tmp/sol.tar -C ",
+    "exit": 0,
+    "s": 1.1,
+    "out": "",
+    "err": ""
+  },
+  "solve": {
+    "cmd": "cd /app && bash /solution/solve.sh > /logs/agent/oracle.txt 2>&1; echo rc=$?",
+    "exit": 0,
+    "s": 1.8,
+    "out": "rc=0",
+    "err": ""
+  },
+  "verify": {
+    "cmd": "cd /app && bash /tests/test.sh > /logs/verifier/test-output.txt 2>&1; echo rewar",
+    "exit": 0,
+    "s": 324.8,
+    "out": "reward=0\nuv's release process is not working. When in doubt\nplease feel free to open an issue!\n/tests/test.sh: line 15: /root/.local/bin/env: No such file or directory\n/tests/test.sh: line 23: uv: command not found\n/tests/test.sh: line 24: uv: command not found\n/tests/test.sh: line 29: uv: command not found",
+    "err": ""
+  }
+}

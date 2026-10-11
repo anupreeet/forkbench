@@ -1,0 +1,45 @@
+{
+  "name": "fb-smoke-1791683349",
+  "started_utc": "2026-10-11T01:49:09.139534+00:00",
+  "create_s": 72.89,
+  "runtime_id": "01a128a6-4ded-7482-97f0-e226fa87c025",
+  "info": "RuntimeInfo(id='01a128a6-4ded-7482-97f0-e226fa87c025', display_name='fb-smoke-1791683349', resources=RuntimeResources(requests=RuntimeResourceRequests(memory_mib=4096, vcpus=2), limits=RuntimeResourceLimits(memory_mib=4096)), ingress_specs=[], status=<RuntimeStatus.RUNNING: 'running'>, egress_policy=EgressPolicy(mode=<EgressMode.DENYLIST: 'denylist'>, allowed_hosts=[], denied_hosts=[]))",
+  "exec_os": {
+    "exit": 0,
+    "s": 2.08,
+    "stdout": "PRETTY_NAME=\"Ubuntu 24.04 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nx86_64",
+    "stderr": ""
+  },
+  "exec_cpu_mem": {
+    "exit": 0,
+    "s": 1.22,
+    "stdout": "2\n               total        used        free      shared  buff/cache   available\nMem:            3925         293        3607           0         228        3631",
+    "stderr": ""
+  },
+  "exec_disk": {
+    "exit": 0,
+    "s": 1.13,
+    "stdout": "/dev/root        32G  1.7G   29G   6% /",
+    "stderr": ""
+  },
+  "exec_docker": {
+    "exit": 0,
+    "s": 1.36,
+    "stdout": "/usr/bin/docker\n29.9.0",
+    "stderr": ""
+  },
+  "exec_clock": {
+    "exit": 0,
+    "s": 1.54,
+    "stdout": "1791683429",
+    "stderr": ""
+  },
+  "exec_whoami": {
+    "exit": 0,
+    "s": 1.26,
+    "stdout": "uid=0(root) gid=0(root) groups=0(root)\nHOME=/root",
+    "stderr": ""
+  },
+  "local_clock": 1791683430,
+  "delete_s": 1.64
+}

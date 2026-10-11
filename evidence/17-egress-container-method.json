@@ -1,0 +1,128 @@
+{
+  "tag": "fb-egc-1791686407",
+  "started_utc": "2026-10-11T02:40:07.908025+00:00",
+  "phases": [
+    {
+      "label": "open (default)",
+      "samples": [
+        {
+          "t": 0.0,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        }
+      ]
+    },
+    {
+      "label": "deny-all (allowlist [])",
+      "samples": [
+        {
+          "t": 1.8,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        },
+        {
+          "t": 9.8,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        },
+        {
+          "t": 18.6,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        },
+        {
+          "t": 27.1,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 34.5,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 42.0,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 50.1,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 57.6,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        }
+      ]
+    },
+    {
+      "label": "open again",
+      "samples": [
+        {
+          "t": 1.9,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 9.7,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 17.4,
+          "host_https_pypi": "000 exit=35",
+          "host_http_example": "0",
+          "ctr_http_example": "first=[HTTP/1.1 403 Forbidden\r] marker=0"
+        },
+        {
+          "t": 25.4,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        },
+        {
+          "t": 33.4,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        },
+        {
+          "t": 43.2,
+          "host_https_pypi": "200 exit=0",
+          "host_http_example": "1",
+          "ctr_http_example": "first=[HTTP/1.1 200 OK\r] marker=1"
+        }
+      ]
+    }
+  ],
+  "setup": [
+    {
+      "cmd": "docker pull -q ghcr.io/laude-institute/terminal-bench/regex-log:2.0",
+      "exit": 0,
+      "out": "ghcr.io/laude-institute/terminal-bench/regex-log:2.0"
+    },
+    {
+      "cmd": "docker run -d --name task ghcr.io/laude-institute/terminal-bench/regex-log:2.0 sh -c 'while true; do sleep 3600; done'",
+      "exit": 0,
+      "out": "5ebe63f14f9371d556c436331e6fbbe93c6d1d01579144380658a155aebda081"
+    },
+    {
+      "cmd": "docker exec task sh -c 'command -v curl wget python3 perl || true'",
+      "exit": 0,
+      "out": ""
+    }
+  ]
+}

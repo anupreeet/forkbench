@@ -1,0 +1,20 @@
+[2026-10-11T02:55:29Z] REST checks (token sent only in the Authorization header; never printed)
+## GET /v2/runtimes (authorized)
+HTTP 200
+x-request-id: 01a128e3-0993-7a10-b080-d83046a1edf6
+{"keys":["data","pagination"],"n":7}
+## GET /v2/runtimes/does-not-exist (expect 404 with request_id)
+HTTP 404
+x-request-id: 01a128e3-0e5c-7dc2-b1d7-8bd2117228f0
+{"error":{"code":"not_found","message":"runtime 00000000-0000-0000-0000-000000000000 not found"},"request_id":"01a128e3-0e5c-7dc2-b1d7-8bd2117228f0"}
+## GET /v2/runtimes with a bad token (expect 401)
+HTTP 401
+x-request-id: 01a128e3-104d-7261-8628-400842ebc793
+{"error":{"code":"unauthenticated","message":"invalid bearer credential"},"request_id":"01a128e3-104d-7261-8628-400842ebc793"}
+## Python SDK: does ApiError expose the request id?
+ApiError str: HTTP 404: not_found: runtime 00000000-0000-0000-0000-000000000000 not found
+attrs: {'status_code': 404, 'code': 'not_found'}
+has request_id attr: False
+{"name":"ApiError","message":"runtime 00000000-0000-0000-0000-000000000000 not found","keys":["name","statusCode","code"],"requestId":null,"status":404}
+## L-31 (2nd run, Python) 02:55:54
+attrs: {'status_code': 404, 'code': 'not_found'} | request_id attr: False

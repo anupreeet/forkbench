@@ -1,0 +1,71 @@
+# docs lint 2026-10-11T03:03:09Z, runta 0.2.15
+
+## /docs/
+  `runta run --name codex-demo --cpus 2 --memory 2048 --agent codex`
+  -> `runta run` has no --agent
+
+## /docs/runtime/secrets-and-secret-injection/
+  `runta secret rule set -f rules.yaml`
+  -> `runta secret rule set` has no -f
+
+## /docs/runtime/secrets-and-secret-injection/
+  `runta secret rule list --runtime demo`
+  -> `runta secret rule ls` has no --runtime
+
+## /docs/reference/agent-skills/runta-installer/
+  `runta --version || runta --help`
+  -> unknown subcommand (resolved: -)
+
+## /docs/reference/agent-skills/runta-demos/
+  `runta run --name pi-agent --cpus 2 --memory 2048 --agent pi --no-shell`
+  -> `runta run` has no --agent, --no-shell
+
+## /docs/reference/agent-skills/runta-demos/
+  `runta secret rule list --runtime pi-agent --json`
+  -> `runta secret rule ls` has no --runtime
+
+## /docs/reference/agent-skills/runta-demos/
+  `runta secret rule list --runtime demo-secret`
+  -> `runta secret rule ls` has no --runtime
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta --help`
+  -> unknown subcommand (resolved: -)
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta agents ls`
+  -> unknown subcommand (resolved: -)
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta run --name pi-agent --cpus 2 --memory 2048 --agent pi --no-shell`
+  -> `runta run` has no --agent, --no-shell
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta secret rule list --runtime pi-agent --json`
+  -> `runta secret rule ls` has no --runtime
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta egress set -f policy.yaml`
+  -> `runta egress set` has no -f
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta secret rule list --runtime demo`
+  -> `runta secret rule ls` has no --runtime
+
+## /docs/reference/agent-skills/runta-cli/
+  `runta secret rule set -f rules.yaml`
+  -> `runta secret rule set` has no -f
+
+## /docs/reference/cli/install/
+  `runta --help`
+  -> unknown subcommand (resolved: -)
+
+## /docs/reference/cli/egress/
+  `runta egress set -f <file>`
+  -> `runta egress set` has no -f
+
+## /docs/reference/cli/secrets/
+  `runta secret rule set -f <file>`
+  -> `runta secret rule set` has no -f
+
+# 216 unique `runta` command lines checked across 30 pages; 17 flagged

@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><title>forkbench results</title>
+<style>
+:root{--bg:#fff;--fg:#1d1d1f;--mut:#6e6e73;--line:#e5e5ea;--sc:#8e8e93;--ck:#0a84ff}
+@media (prefers-color-scheme:dark){:root{--bg:#111;--fg:#f2f2f7;--mut:#a1a1a6;--line:#2c2c2e;--sc:#636366}}
+body{background:var(--bg);color:var(--fg);font:15px/1.5 -apple-system,system-ui,sans-serif;
+max-width:980px;margin:32px auto;padding:0 16px}
+table{border-collapse:collapse;width:100%;font-size:13px}td,th{border-bottom:1px solid var(--line);
+padding:6px 8px;text-align:left}th{color:var(--mut);font-weight:500}
+svg{width:100%;height:auto;font-size:12px;fill:var(--fg)}.sc{fill:var(--sc)}.ck{fill:var(--ck)}
+.rng{stroke:var(--fg);stroke-width:1.5;opacity:.6}.mut{color:var(--mut)}
+.wrap{overflow-x:auto}
+</style></head><body>
+<h1>forkbench results</h1>
+<p class="mut">Reset = time until the task container accepts commands. Bars show the median; the line
+shows min–max. Costs are estimates from published rates.</p>
+<svg viewBox="0 0 780 62" role="img" aria-label="Median reset time per task and strategy"><text x="222" y="21" text-anchor="end">regex-log · checkpoint</text><rect class="ck" x="230" y="9" width="297.8" height="16" rx="2"/><line class="rng" x1="527.8" x2="527.8" y1="17" y2="17"/><text x="533.8" y="21">76s</text><text x="222" y="47" text-anchor="end">regex-log · scratch</text><rect class="sc" x="230" y="35" width="460.0" height="16" rx="2"/><line class="rng" x1="690.0" x2="690.0" y1="43" y2="43"/><text x="696.0" y="47">117s</text></svg>
+<div class="wrap"><table><tr><th>task</th><th>strategy</th><th>reset (median, range, n)</th><th>provision</th><th>solve</th><th>verify</th><th>correct</th><th>verifier failed</th><th>errors</th><th>est. cost</th></tr><tr><td>regex-log</td><td>checkpoint</td><td>75.6s (75.6–75.6, n=1)</td><td>73.0s (73.0–73.0, n=1)</td><td>4.3s (4.3–4.3, n=1)</td><td>98.0s (98.0–98.0, n=1)</td><td>2/2</td><td>0</td><td>0</td><td>$0.041</td></tr><tr><td>regex-log</td><td>scratch</td><td>116.7s (116.7–116.7, n=1)</td><td>73.0s (73.0–73.0, n=1)</td><td>4.2s (4.2–4.2, n=1)</td><td>326.6s (326.6–326.6, n=1)</td><td>1/2</td><td>0</td><td>0</td><td>$0.057</td></tr></table></div>
+<h2>Correctness and isolation checks</h2><h3>checkpoint</h3><ul><li><b>trials checked</b>: 3</li><li><b>no leftover state</b>: 3/3</li><li><b>max |clock skew|</b>: 0.25s</li><li><b>no-op exec round trip (median)</b>: 1.05s</li><li><b>container had to be restarted</b>: 0/3</li><li><b>unique boot_id / machine-id / hostname / fresh uuid</b>: 1/3 / 1/3 / 1/3 / 3/3</li><li><b>egress (want → result, time to take effect)</b>: deny_all_at_restore: BLOCKED NOT reached (last {&#x27;host&#x27;: &#x27;BLOCKED(000)&#x27;, &#x27;container&#x27;: &#x27;OPEN&#x27;}) after 120.8s, after_change_to_open: OPEN ok after 25.5s</li></ul><h3>scratch</h3><ul><li><b>trials checked</b>: 3</li><li><b>no leftover state</b>: 3/3</li><li><b>max |clock skew|</b>: 0.29s</li><li><b>no-op exec round trip (median)</b>: 1.03s</li><li><b>container had to be restarted</b>: n/a</li><li><b>unique boot_id / machine-id / hostname / fresh uuid</b>: 3/3 / 3/3 / 1/3 / 3/3</li><li><b>egress (want → result, time to take effect)</b>: open_before: OPEN NOT reached (last {&#x27;host&#x27;: &#x27;BLOCKED(000)&#x27;, &#x27;container&#x27;: &#x27;OPEN&#x27;}) after 7.3s, after_change_to_deny_all: BLOCKED NOT reached (last {&#x27;host&#x27;: &#x27;BLOCKED(000)&#x27;, &#x27;container&#x27;: &#x27;OPEN&#x27;}) after 122.7s</li></ul>
+</body></html>
