@@ -10,6 +10,7 @@ If A stalls while B and M don't, the gateway path is implicated; if A and B both
 
 import asyncio
 import json
+import sys
 import subprocess
 import time
 from datetime import UTC, datetime
@@ -67,7 +68,7 @@ async def main():
                 await asyncio.sleep(max(0, GAP_S - (time.monotonic() - t0)))
         finally:
             await asyncio.gather(ra.delete(), rb.delete(), return_exceptions=True)
-    with open("evidence/19-download-watch.json", "w") as fh:
+    with open(sys.argv[1] if len(sys.argv) > 1 else "evidence/19-download-watch.json", "w") as fh:
         json.dump(res, fh, indent=2)
 
 

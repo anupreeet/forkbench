@@ -1,0 +1,414 @@
+{
+  "started_utc": "2026-10-13T00:30:24.777822+00:00",
+  "url": "https://github.com/astral-sh/uv/releases/download/0.7.13/uv-x86_64-unknown-linux-gnu.tar.gz",
+  "rounds": [
+    {
+      "round": 1,
+      "utc": "00:34:22",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002146,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.001934,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.237682,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.192074,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 30.855069,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 2,
+      "utc": "00:36:26",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.001726,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002763,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.193063,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.206415,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 32.518701,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 3,
+      "utc": "00:38:30",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002242,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002439,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.183348,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.209969,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 16.176789,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 4,
+      "utc": "00:40:33",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002514,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.00275,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.195776,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.224248,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 28.925478,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 5,
+      "utc": "00:42:35",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.001764,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002851,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.168958,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.174567,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 6.146288,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 6,
+      "utc": "00:44:42",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.001689,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.0028,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.171821,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.15738,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 15.953933,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 7,
+      "utc": "00:46:49",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002515,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 8.691819,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.201354,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.183648,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 20.792865,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 8,
+      "utc": "00:50:32",
+      "gateway-1": {
+        "raw": "EXEC_ERROR ConnectionClosedError: no close frame received or sent"
+      },
+      "gateway-2": {
+        "raw": "EXEC_ERROR ConnectionClosedError: no close frame received or sent"
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.214808,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.170975,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 4.991201,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 9,
+      "utc": "01:00:57",
+      "gateway-1": {
+        "raw": "EXEC_ERROR ConnectionClosedError: no close frame received or sent"
+      },
+      "gateway-2": {
+        "raw": "EXEC_ERROR ConnectionClosedError: sent 1011 (internal error) keepalive ping timeout; no close frame received"
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.309205,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.211084,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 1.946291,
+        "exit": 0,
+        "ok": true
+      }
+    },
+    {
+      "round": 10,
+      "utc": "01:03:01",
+      "gateway-1": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.001275,
+        "exit": 28,
+        "ok": false
+      },
+      "gateway-2": {
+        "code": "000",
+        "mb": 0.0,
+        "s": 120.002207,
+        "exit": 28,
+        "ok": false
+      },
+      "passthrough-1": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.188234,
+        "exit": 0,
+        "ok": true
+      },
+      "passthrough-2": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 0.183012,
+        "exit": 0,
+        "ok": true
+      },
+      "local-control": {
+        "code": "200",
+        "mb": 17.8,
+        "s": 24.369692,
+        "exit": 0,
+        "ok": true
+      }
+    }
+  ],
+  "issuer": {
+    "gateway-1": "*  issuer: CN=runta-egress-gateway-intermediate:85d5aa39-e75b-4c5a-88d8-a400a9688bae",
+    "gateway-2": "*  issuer: CN=runta-egress-gateway-intermediate:85d5aa39-e75b-4c5a-88d8-a400a9688bae",
+    "passthrough-1": "*  issuer: C=GB; O=Sectigo Limited; CN=Sectigo Public Server Authentication CA DV E36",
+    "passthrough-2": "*  issuer: C=GB; O=Sectigo Limited; CN=Sectigo Public Server Authentication CA DV E36"
+  },
+  "summary": {
+    "gateway-1": {
+      "ok": "0/10",
+      "median_s_ok": null,
+      "max_s_ok": null
+    },
+    "gateway-2": {
+      "ok": "1/10",
+      "median_s_ok": 8.69,
+      "max_s_ok": 8.691819
+    },
+    "passthrough-1": {
+      "ok": "10/10",
+      "median_s_ok": 0.19,
+      "max_s_ok": 0.309205
+    },
+    "passthrough-2": {
+      "ok": "10/10",
+      "median_s_ok": 0.19,
+      "max_s_ok": 0.224248
+    },
+    "local-control": {
+      "ok": "10/10",
+      "median_s_ok": 18.48,
+      "max_s_ok": 32.518701
+    }
+  },
+  "finished_utc": "2026-10-13T01:03:03.997500+00:00"
+}

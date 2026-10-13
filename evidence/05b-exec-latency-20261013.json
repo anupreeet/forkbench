@@ -1,0 +1,46 @@
+{
+  "name": "fb-verify-exec-1791850313",
+  "started_utc": "2026-10-13T00:11:53.580722+00:00",
+  "healthz_fresh_https": {
+    "tcp_connect": {
+      "n": 10,
+      "median": 0.203,
+      "min": 0.118,
+      "max": 0.334
+    },
+    "tls_done": {
+      "n": 10,
+      "median": 0.536,
+      "min": 0.294,
+      "max": 0.754
+    },
+    "total": {
+      "n": 10,
+      "median": 0.831,
+      "min": 0.515,
+      "max": 1.223
+    }
+  },
+  "exec_true": {
+    "total": {
+      "n": 20,
+      "median": 3.204,
+      "min": 2.19,
+      "max": 8.234
+    },
+    "websocket_open": {
+      "n": 20,
+      "median": 2.018,
+      "min": 1.409,
+      "max": 5.348
+    },
+    "after_open_until_exit": {
+      "n": 20,
+      "median": 1.037,
+      "min": 0.502,
+      "max": 3.712
+    }
+  },
+  "in_runtime_true": "435us",
+  "finished_utc": "2026-10-13T00:14:27.348144+00:00"
+}

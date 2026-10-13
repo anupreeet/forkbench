@@ -1,0 +1,10 @@
+[2026-10-13T00:13:19Z] runta 0.2.15
+
+## L-02: public links in Runta's package metadata
+npm @runta/runta-sdk repository: git+https://github.com/runta-dev/typescript-sdk.git homepage: https://github.com/runta-dev/typescript-sdk#readme
+Homebrew formula:  homepage "https://github.com/runta-dev/runta"
+GET https://github.com/runta-dev/typescript-sdk -> 404
+GET https://github.com/runta-dev/runta -> 404
+GET https://github.com/runta-dev/homebrew-tap -> 200
+PyPI runta-sdk project_urls: null
+null

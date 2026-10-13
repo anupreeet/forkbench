@@ -1,0 +1,95 @@
+{
+  "name": "fb-verify-egress-1791849922",
+  "started_utc": "2026-10-13T00:05:22.829482+00:00",
+  "changes": [
+    {
+      "to": "deny-all",
+      "utc": "00:08:07",
+      "set_policy_call_s": 2.42,
+      "readback": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "BLOCKED",
+      "last": {
+        "host": "BLOCKED(000/curl 35)",
+        "container": "BLOCKED(HTTP/1.1 403 Forbidden)"
+      },
+      "matched": true,
+      "after_s": 23.4,
+      "samples": 3
+    },
+    {
+      "to": "open",
+      "utc": "00:08:46",
+      "set_policy_call_s": 4.18,
+      "readback": "EgressPolicy(mode=<EgressMode.DENYLIST: 'denylist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "OPEN",
+      "last": {
+        "host": "OPEN",
+        "container": "OPEN"
+      },
+      "matched": true,
+      "after_s": 29.5,
+      "samples": 2
+    },
+    {
+      "to": "deny-all",
+      "utc": "00:09:36",
+      "set_policy_call_s": 4.0,
+      "readback": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "BLOCKED",
+      "last": {
+        "host": "BLOCKED(000/curl 35)",
+        "container": "BLOCKED(HTTP/1.1 403 Forbidden)"
+      },
+      "matched": true,
+      "after_s": 39.4,
+      "samples": 2
+    },
+    {
+      "to": "open",
+      "utc": "00:10:23",
+      "set_policy_call_s": 18.49,
+      "readback": "EgressPolicy(mode=<EgressMode.DENYLIST: 'denylist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "OPEN",
+      "last": {
+        "host": "OPEN",
+        "container": "OPEN"
+      },
+      "matched": true,
+      "after_s": 21.7,
+      "samples": 2
+    },
+    {
+      "to": "deny-all",
+      "utc": "00:10:53",
+      "set_policy_call_s": 2.8,
+      "readback": "EgressPolicy(mode=<EgressMode.ALLOWLIST: 'allowlist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "BLOCKED",
+      "last": {
+        "host": "BLOCKED(000/curl 35)",
+        "container": "BLOCKED(HTTP/1.1 403 Forbidden)"
+      },
+      "matched": true,
+      "after_s": 22.4,
+      "samples": 2
+    },
+    {
+      "to": "open",
+      "utc": "00:11:34",
+      "set_policy_call_s": 2.56,
+      "readback": "EgressPolicy(mode=<EgressMode.DENYLIST: 'denylist'>, allowed_hosts=[], denied_hosts=[])",
+      "want": "OPEN",
+      "last": {
+        "host": "OPEN",
+        "container": "OPEN"
+      },
+      "matched": true,
+      "after_s": 32.9,
+      "samples": 3
+    }
+  ],
+  "baseline": {
+    "host": "OPEN",
+    "container": "OPEN"
+  },
+  "finished_utc": "2026-10-13T00:11:42.973940+00:00"
+}

@@ -7,6 +7,7 @@ Readiness = first successful exec after resume() returns (the same definition Lo
 
 import asyncio
 import json
+import sys
 import time
 from datetime import UTC, datetime
 
@@ -65,7 +66,7 @@ async def main():
                 print(json.dumps(cycle), flush=True)
         finally:
             await rt.delete()
-    with open("evidence/23-pause-resume.json", "w") as fh:
+    with open(sys.argv[1] if len(sys.argv) > 1 else "evidence/23-pause-resume.json", "w") as fh:
         json.dump(out, fh, indent=2)
 
 

@@ -1,0 +1,14 @@
+[00:41:55] controls on the same default-path runtimes ['fb-verify-dl-gateway-1-1791851424', 'fb-verify-dl-gateway-2-1791851424'], while the A/B rounds run; curl max 30 s each
+[00:42:09] fb-verify-dl-gateway-1  https://speed.cloudflare.com/__down?bytes=20000000 -> 200 20000000B 10.494271s exit=0
+[00:42:20] fb-verify-dl-gateway-1  https://pypi.org/simple/ -> 200 47093415B 7.865385s exit=0
+[00:42:27] fb-verify-dl-gateway-1  https://github.com/ -> 200 572787B 0.860036s exit=0
+[00:43:01] fb-verify-dl-gateway-1  https://api.github.com/ -> curl: (28) Operation timed out after 30001 milliseconds with 0 bytes received
+000 0B 30.002007s exit=28
+[00:43:15] fb-verify-dl-gateway-1  https://github.com/astral-sh/uv/releases/download/0.7.13/uv-x86_64-unknown-linux-gnu.tar.gz -> 200 17791244B 10.323441s exit=0
+[00:43:26] fb-verify-dl-gateway-2  https://speed.cloudflare.com/__down?bytes=20000000 -> 200 20000000B 7.509665s exit=0
+[00:43:37] fb-verify-dl-gateway-2  https://pypi.org/simple/ -> 200 47093415B 7.841200s exit=0
+[00:43:45] fb-verify-dl-gateway-2  https://github.com/ -> 200 572787B 4.303431s exit=0
+[00:44:19] fb-verify-dl-gateway-2  https://api.github.com/ -> curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+000 0B 30.002209s exit=28
+[00:44:56] fb-verify-dl-gateway-2  https://github.com/astral-sh/uv/releases/download/0.7.13/uv-x86_64-unknown-linux-gnu.tar.gz -> curl: (28) Operation timed out after 30002 milliseconds with 0 bytes received
+000 0B 30.002978s exit=28

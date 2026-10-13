@@ -1,0 +1,37 @@
+{
+  "name": "fb-pause-1791850467",
+  "started_utc": "2026-10-13T00:14:27.485903+00:00",
+  "cycles": [
+    {
+      "cycle": 1,
+      "pause_call_s": 4.8,
+      "status_paused_after_s": 16.3,
+      "status_seen": "RuntimeStatus.PAUSED",
+      "resume_call_s": 50.2,
+      "first_exec_after_resume_s": 3.5,
+      "resume_to_ready_s": 53.6,
+      "state": "kept | proc-alive"
+    },
+    {
+      "cycle": 2,
+      "pause_call_s": 4.4,
+      "status_paused_after_s": 36.0,
+      "status_seen": "RuntimeStatus.PAUSED",
+      "resume_call_s": 28.6,
+      "first_exec_after_resume_s": 3.8,
+      "resume_to_ready_s": 32.4,
+      "state": "kept | proc-alive"
+    },
+    {
+      "cycle": 3,
+      "pause_call_s": 3.8,
+      "status_paused_after_s": 27.8,
+      "status_seen": "RuntimeStatus.PAUSED",
+      "resume_call_s": 55.1,
+      "first_exec_after_resume_s": 7.8,
+      "resume_to_ready_s": 62.9,
+      "state": "kept | proc-alive"
+    }
+  ],
+  "create_s": 72.2
+}

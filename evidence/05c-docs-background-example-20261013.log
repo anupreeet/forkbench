@@ -1,0 +1,8 @@
+[00:23:35] runta 0.2.15
+[00:24:28] $ runta exec fb-verify-docsbg-1791851015 -- sh -lc 'nohup python3 -m http.server 8080 >/tmp/http.log 2>&1 &'
+[00:24:33] exit=0
+[00:24:46] 5 s later, process: NONE  
+[00:24:50] 5 s later, GET http://127.0.0.1:8080/ inside the runtime: 000
+[00:24:50] control: same server via setsid -f
+[00:25:02] 5 s later, GET http://127.0.0.1:8081/ (setsid -f): 200
+[00:25:06] cleanup: []

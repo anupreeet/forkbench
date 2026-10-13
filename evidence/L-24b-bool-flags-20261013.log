@@ -1,0 +1,30 @@
+[2026-10-13T00:13:19Z] runta 0.2.15
+
+## possible_values declared in JSON help for on/off flags
+runta help run -> --wait: {"long":"wait","possible_values":["true","false"],"value_names":["WAIT"]}
+runta help run -> --vnc: {"long":"vnc","possible_values":["true","false"],"value_names":["VNC_ENABLED"]}
+runta help run -> --llm-tool-io-capture: {"long":"llm-tool-io-capture","possible_values":["true","false"],"value_names":["LLM_TOOL_IO_CAPTURE_ENABLED"]}
+runta help secret set -> --value-stdin: {"long":"value-stdin","possible_values":["true","false"],"value_names":["VALUE_STDIN"]}
+runta help secret set -> --prompt: {"long":"prompt","possible_values":["true","false"],"value_names":["PROMPT"]}
+
+## passing an explicit value (guarded with --cpus 0 so nothing could be created even if parsing succeeded)
+$ runta run --name fb-never-created --cpus 0 --wait true  ->  {
+  "error": {
+    "code": "UNKNOWN_ARGUMENT",
+    "kind": "cli",
+    "message": "error: unexpected argument 'true' found\n\nUsage: runta run [OPTIONS]\n\nFor more information, try '--help'.\n",
+    "
+$ runta run --name fb-never-created --cpus 0 --vnc true  ->  {
+  "error": {
+    "code": "UNKNOWN_ARGUMENT",
+    "kind": "cli",
+    "message": "error: unexpected argument 'true' found\n\nUsage: runta run [OPTIONS]\n\nFor more information, try '--help'.\n",
+    "
+$ runta run --name fb-never-created --cpus 0 --llm-tool-io-capture true  ->  {
+  "error": {
+    "code": "UNKNOWN_ARGUMENT",
+    "kind": "cli",
+    "message": "error: unexpected argument 'true' found\n\nUsage: runta run [OPTIONS]\n\nFor more information, try '--help'.\n",
+    "
+
+## nothing was created: no runtime named fb-never-created exists (runtimes listed with the token loaded: ["fb-verify-exec-1791850313","fb-cvh-1791850303"])

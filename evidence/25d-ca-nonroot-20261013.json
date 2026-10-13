@@ -1,0 +1,58 @@
+{
+  "started_utc": "2026-10-13T00:23:18.972638+00:00",
+  "runs": [
+    {
+      "runtime": "fb-verify-ca1-1791850998",
+      "host_bundle": "-rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem\n-rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt",
+      "cases": [
+        {
+          "image": "curlimages/curl:8.10.1",
+          "user_flag": "(image default)",
+          "output": "s/runta-egress.crt | bundle-readable | 000 exit=60 | curl: (60) SSL certificate problem: unable to get local issuer certificate | More details here: https://curl.se/docs/sslcerts.html |  | curl failed to verify the legitimacy of the server and therefore could not | establish a secure connection to it. To learn more about this situation and | how to fix it, please visit the webpage mentioned above."
+        },
+        {
+          "image": "curlimages/curl:8.10.1",
+          "user_flag": "--user root",
+          "output": "s/runta-egress.crt | bundle-readable | 000 exit=60 | curl: (60) SSL certificate problem: unable to get local issuer certificate | More details here: https://curl.se/docs/sslcerts.html |  | curl failed to verify the legitimacy of the server and therefore could not | establish a secure connection to it. To learn more about this situation and | how to fix it, please visit the webpage mentioned above."
+        },
+        {
+          "image": "python:3.12-slim",
+          "user_flag": "(image default)",
+          "output": "0 | -rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem | -rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt | bundle-readable | 200"
+        },
+        {
+          "image": "python:3.12-slim",
+          "user_flag": "--user 1000",
+          "output": "1000 | -rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem | -rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt | bundle-readable | 200"
+        }
+      ]
+    },
+    {
+      "runtime": "fb-verify-ca2-1791850998",
+      "host_bundle": "-rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem\n-rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt",
+      "cases": [
+        {
+          "image": "curlimages/curl:8.10.1",
+          "user_flag": "(image default)",
+          "output": "s/runta-egress.crt | bundle-readable | 000 exit=60 | curl: (60) SSL certificate problem: unable to get local issuer certificate | More details here: https://curl.se/docs/sslcerts.html |  | curl failed to verify the legitimacy of the server and therefore could not | establish a secure connection to it. To learn more about this situation and | how to fix it, please visit the webpage mentioned above."
+        },
+        {
+          "image": "curlimages/curl:8.10.1",
+          "user_flag": "--user root",
+          "output": "s/runta-egress.crt | bundle-readable | 000 exit=60 | curl: (60) SSL certificate problem: unable to get local issuer certificate | More details here: https://curl.se/docs/sslcerts.html |  | curl failed to verify the legitimacy of the server and therefore could not | establish a secure connection to it. To learn more about this situation and | how to fix it, please visit the webpage mentioned above."
+        },
+        {
+          "image": "python:3.12-slim",
+          "user_flag": "(image default)",
+          "output": "0 | -rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem | -rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt | bundle-readable | 200"
+        },
+        {
+          "image": "python:3.12-slim",
+          "user_flag": "--user 1000",
+          "output": "1000 | -rw-r--r-- 1 0 0 219916 Oct 13 00:24 /run/runta/ca-bundle.pem | -rw-r--r-- 1 0 0    574 Oct 13 00:24 /usr/local/share/ca-certificates/runta-egress.crt | bundle-readable | 200"
+        }
+      ]
+    }
+  ],
+  "finished_utc": "2026-10-13T00:27:51.841761+00:00"
+}

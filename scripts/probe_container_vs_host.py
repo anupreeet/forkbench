@@ -7,6 +7,8 @@ certificate issuer each side sees and where the container's CA bundle came from.
 
 import asyncio
 import json
+import shlex
+import sys
 import time
 from datetime import UTC, datetime
 
@@ -50,14 +52,14 @@ async def main():
             out["docker_mounts"] = await sh(rt, "docker inspect task --format '{{json .Mounts}}'")
             for i in range(ROUNDS):
                 host = parse(await sh(rt, CURL, 200))
-                ctr = parse(await sh(rt, f"docker exec task bash -c {json.dumps(CURL)}", 200))
+                ctr = parse(await sh(rt, f"docker exec task bash -c {shlex.quote(CURL)}", 200))
                 row = {"round": i + 1, "utc": datetime.now(UTC).strftime("%H:%M:%S"), "host": host, "container": ctr}
                 out["rounds"].append(row)
                 print(json.dumps(row), flush=True)
             print(json.dumps({k: out.get(k) for k in ("container_setup", "issuer_host", "issuer_container", "container_ca_hint")}), flush=True)
         finally:
             await rt.delete()
-    with open("evidence/25-container-vs-host.json", "w") as fh:
+    with open(sys.argv[1] if len(sys.argv) > 1 else "evidence/25-container-vs-host.json", "w") as fh:
         json.dump(out, fh, indent=2)
 
 

@@ -1,0 +1,47 @@
+# Final verification 2026-10-13T00:05:27Z | runta CLI 0.2.15 | runta-sdk 0.2.1 | macOS 26.6.2 arm64
+
+## L-01 documented install of the OpenAI Agents integration (fresh Python 3.12 venv)
+ERROR: Could not find a version that satisfies the requirement openai-agents-runta (from versions: none)
+ERROR: No matching distribution found for openai-agents-runta
+
+## L-03 pip install runta-sdk on macOS system Python (Python 3.9.6)
+ERROR: Could not find a version that satisfies the requirement runta-sdk (from versions: none)
+ERROR: No matching distribution found for runta-sdk
+
+## L-14 / L-16 SDK create() keyword support
+create() has 'image': False | has 'runtime_agent': False
+
+## L-18 subcommand --help with non-TTY stdout (expect command.name == subcommand)
+runta run --help -> command.name=runta
+runta exec --help -> command.name=runta
+runta checkpoint --help -> command.name=runta
+runta egress --help -> command.name=runta
+runta help run -> command.name=run
+
+## L-20 runta checkpoint ls --all (documented flag)
+{"code":"UNKNOWN_ARGUMENT","message":"error: unexpected argument '--all' found"}
+
+## L-24 JSON help says --wait takes true|false; CLI rejects a value
+{"possible_values":["true","false"],"value_names":["WAIT"]}
+{"code":"UNKNOWN_ARGUMENT","message":"error: unexpected argument 'true' found"}
+
+## L-25 documented secret template ${credential} (validated client-side, no secret needed)
+{"code":"CLI","kind":"cli","message":"--template must contain ${secret} exactly once"}
+
+## L-02 public links published by Runta packages
+npm repository/homepage: repository.url = 'git+https://github.com/runta-dev/typescript-sdk.git' homepage = 'https://github.com/runta-dev/typescript-sdk#readme' 
+https://github.com/runta-dev/typescript-sdk -> HTTP 404
+https://github.com/runta-dev/runta -> HTTP 404
+
+## Part 2: one runtime (fb-final-1791849927) for L-21, L-22, L-27, L-28
+L-22 exec('true') x20: median 1.971s min 1.293s max 2.361s
+L-21 alive 5 s later: 2788 sleep 701
+L-27 (awake) https://8080-01a13294-33e1-7a10-91b8-d40591a9d410.runta.dev/ -> 200   |   https://01a13294-33e1-7a10-91b8-d40591a9d410.runta.dev/ -> 404
+L-28 status after 103 s idle: suspended
+L-28 request 1 while suspended -> 404 12.950711s | status=suspended
+L-28 request 2 while suspended -> 404 1.035000s | status=suspended
+L-28 request 3 while suspended -> 404 1.790227s | status=suspended
+L-28 request 4 while suspended -> 404 2.256878s | status=suspended
+L-28 request 5 while suspended -> 404 2.224857s | status=suspended
+L-28 request 6 while suspended -> 404 5.524645s | status=suspended
+## cleanup: runtimes=["fb-cvh-1791850303"] checkpoints=[] images=[]
