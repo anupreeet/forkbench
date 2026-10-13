@@ -1,0 +1,29 @@
+# Re-run of the docs-lint confirmations 2026-10-13T03:51:37Z, runta 0.2.15
+# argv passed as explicit lists (no shell). Each ends with a fake flag (--zz-sentinel), so nothing can
+# execute; the CLI reports the FIRST argument it doesn't recognize. Third/sixth lines are controls.
+
+$ runta run --name fb-never-created --agent codex --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--agent' found
+
+$ runta run --name fb-never-created --no-shell --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--no-shell' found
+
+$ runta run --name fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--zz-sentinel' found
+
+$ runta agents ls --zz-sentinel
+  -> UNKNOWN_COMMAND: error: unrecognized subcommand 'agents'
+
+$ runta secret rule ls --runtime fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--runtime' found
+
+$ runta secret rule ls fb-never-created --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '--zz-sentinel' found
+
+$ runta secret rule set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found
+
+$ runta egress set -f <empty.yaml> --zz-sentinel
+  -> UNKNOWN_ARGUMENT: error: unexpected argument '-f' found
+
+# fb-never-created exists? False (runtime list read with the token loaded)

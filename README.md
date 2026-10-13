@@ -46,7 +46,9 @@ What the numbers say:
   bad #3). `qemu-startup` isn't gradable right now (its verifier hits an upstream Debian 404). Only 3 trials
   were graded. The regex-log checkpoint fork was correct (reward 1). The two build-cython-ext runs scored 0
   because the task's reference solution itself failed: `solve.sh` exited with an error in all 9 completed
-  runs, under both strategies, so those zeros say nothing about forks. One more regex-log checkpoint fork
+  runs, under both strategies, so those zeros say nothing about forks. That `solve.sh` starts with a
+  `git clone` from github.com, so it may be the same GitHub problem as FEEDBACK bad #3, but its output
+  wasn't recorded. One more regex-log checkpoint fork
   was graded correct in the earlier smoke run.
 - **Third option, Runtime Images (CLI only):** a runtime booted from a custom image built `FROM` the
   regex-log task image was ready in 71.8 s (median, n=3), with no Docker step. It's competitive with checkpoints,
@@ -113,9 +115,10 @@ uv run forkbench cleanup --yes                             # safety net: deletes
   once the running estimate reaches it.
 - **Secrets.** The token is held as `SecretStr`, never printed, and redacted from logs. Use a scoped key
   that expires. Task code is untrusted: it only executes inside Runta runtimes, never locally.
-- **No extra retry layer.** The Python SDK already retries create (with an idempotency key), patch,
-  file transfers and delete on transient errors (408/429/502/503/504, timeouts). Exec and resume aren't
-  retried, so a dropped exec fails its trial and is reported as an error rather than hidden.
+- **No extra retry layer.** The Python SDK already retries create (with an idempotency key), patch and
+  file transfers on 408/429/502/503/504 and timeouts, and delete on 5xx or connection errors. Exec only
+  retries "runtime not found" while a runtime starts, so a dropped exec fails its trial and is reported
+  as an error rather than hidden.
 
 ## Repository map
 

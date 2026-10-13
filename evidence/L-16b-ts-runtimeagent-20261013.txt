@@ -1,0 +1,4 @@
+# @runta/runta-sdk 0.2.0 (npm pack), 2026-10-13T03:51:50Z: how create() handles runtimeAgent
+dist/internal/transport.js:5:    if (typeof options.runtimeAgent === "string" && options.runtimeAgent.length > 0) {
+dist/internal/transport.js:6:        throw new ApiError("runtimeAgent is no longer supported by the v2 API", { code: "unimplemented" });
+dist/types.d.ts:186:    runtimeAgent?: string | null | undefined;

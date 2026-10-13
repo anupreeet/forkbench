@@ -8,3 +8,4 @@ GET https://github.com/runta-dev/runta -> 404
 GET https://github.com/runta-dev/homebrew-tap -> 200
 PyPI runta-sdk project_urls: null
 null
+npm @runta/runta-sdk bugs: https://github.com/runta-dev/typescript-sdk/issues -> 404

@@ -18,7 +18,7 @@ local paths are shown relative to the repo.
 | `06-egress-propagation.json` | 5 policy changes on one runtime, every probe until enforced | bad #1, the good |
 | `06b-egress-timing-20261013.*` | 6 more policy changes (host + container probes) | bad #1, the good |
 | `07-harbor-*.log`, [`../jobs/`](../jobs/) | Harbor `-e runta` oracle/nop runs; verifiers fail on the GitHub `uv` download | bad #3 |
-| `09-tour.log` | secret stubs, `${credential}` template rejection, public URL formats, auto-suspend | the good, U1, U9 |
+| `09-tour.log` | secret stubs (its on-disk leak check was flawed; see 09b), `${credential}` template rejection, public URL formats, auto-suspend | the good, U1, U9, bad #2 |
 | `09b-secret-stub-20261013.log` | secret stub re-run with a corrected on-disk leak check | the good |
 | `10-qemu-verifier-404.log` | qemu-startup's verifier fails upstream (Debian 404, reproduced outside Runta) | not a Runta issue |
 | `11-ts-sdk-list.log` | TypeScript SDK works; its create options | the good, bad #4 |
@@ -26,7 +26,7 @@ local paths are shown relative to the repo.
 | `13-image-build.log`, `16-image-runtime*.json` | Runtime Image build, and runtime-from-image readiness (n=3) | the good, bad #4, README results |
 | `15-download-probe.log` | same GitHub asset via gateway, TLS passthrough, and a local control; certificate issuer on each path | bad #3 |
 | `17-egress-container-method.json` | deny-all blocks host and container (gateway 403); 2 more policy changes | the good, bad #1 |
-| `18-container-download.progress.log`, `18b-*` | host-level GitHub download stalls (0 bytes in 150 s) while a 20 MB non-GitHub download completes; local control during the stall. The container columns used `curlimages/curl`, which fails TLS verification on Runta (see 25d). | bad #3, the good |
+| `18-container-download.progress.log`, `18b-*` | host-level GitHub download stalls (0 bytes in 150 s) while a 20 MB non-GitHub download completes; local control during the stall. Ignore the container columns: they used `curlimages/curl`, whose image sets its own `CURL_CA_BUNDLE=/cacert.pem`, so its TLS failures aren't about Runta. | bad #3 |
 | `19-download-watch.json` | 14 paired rounds: default gateway vs TLS passthrough (one runtime each) | bad #3 |
 | `19b-download-ab-20261013.*` | 10 rounds, two runtimes per arm, plus a local control | bad #3 |
 | `19c-gateway-controls-20261013.log` | on the same default-path runtimes: non-GitHub downloads, github.com, api.github.com, and two more release downloads | bad #3 |
@@ -34,12 +34,12 @@ local paths are shown relative to the repo.
 | `21-token-xray.json` | zero-cost Token X-Ray attempt (no capture) | not tested |
 | `22-rest-errors.log`, `22b-rest-errors-20261013.log` | REST error envelopes (400, 401, 404, 422) and `request_id`; SDK error classes | the good, bad #7 |
 | `23-pause-resume.run1.log`, `.run2.log`, `.run3-20261013.*` | pause → resume timings, state kept, 429 "no available compute capacity" | bad #2 |
-| `24-docs-lint.txt`, `24b-*`, `24c-*` | docs linter output (17 hits, 3 false positives), then each real hit confirmed twice with a sentinel flag | U10–U13 |
+| `24-docs-lint.txt`, `24b-*`, `24c-*`, `24d-docs-lint-verify-20261013.log` | docs linter output (17 hits, 3 false positives; the 14 real ones are 6 distinct commands), then each confirmed with a sentinel flag on 10-11 (twice) and 10-13 | U10–U13 |
 | `25-container-vs-host.*`, `25b-container-vs-host-20261013.*` | gateway CA and `*_CA_BUNDLE` injected into the task container; host vs container GitHub downloads (the container `exit` field is unreliable there because of shell quoting; use code and size) | the good, bad #3 |
 | `25c-ca-and-background-20261013.json` | CA injection and HTTPS in three more images; background patterns via SDK and CLI | the good, bad #6 |
-| `25d-ca-nonroot-20261013.json` | `curlimages/curl` vs `python:3.12-slim`, as root and non-root, on two runtimes | the good |
+| `25d-ca-nonroot-20261013.json` | `python:3.12-slim` as root and non-root on two runtimes (HTTPS verifies); `curlimages/curl` fails there because the image sets its own `CURL_CA_BUNDLE=/cacert.pem` | the good |
 | `26-stalled-runtime-download.log` | a stalled transfer doesn't recover while a new request succeeds (run on two benchmark runtimes during their verifier phase) | bad #3 |
-| `L-*.log` | single-finding reproductions (see IDs below) | ugly |
+| `L-*.log`, `L-16b-*.txt` | single-finding reproductions (see IDs below); `L-34` is the `SecretStubConfig` import check (two runs) with the docs snippet | ugly |
 | `99-final-verify-*.log` | full re-runs of every reproduction ([`../scripts/final_verify.sh`](../scripts/final_verify.sh)); in the 10-13 run, the runtime listed at cleanup belonged to another probe running in parallel, and the final account check was empty | all |
 
 ## Finding IDs
@@ -52,7 +52,8 @@ Scripts and logs tag findings with `L-xx` IDs. They map to FEEDBACK.md as follow
 | L-02 | U8 | L-22 | bad #5 |
 | L-03 | U7 | L-24 | U2 |
 | L-14, L-30 | bad #4 | L-25 | U1 |
-| L-16 | U6 | L-27 | U9 |
+| L-16, L-16b | U6 | L-27 | U9 |
 | L-18 | U3 | L-28, L-33 | bad #2 |
 | L-20 | U4 | L-29 | bad #3 |
+| L-34 | U14 |  |  |
 | L-11 | the good (IPs/CIDRs) | L-31 | bad #7 |
