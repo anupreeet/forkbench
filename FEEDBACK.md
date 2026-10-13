@@ -9,8 +9,8 @@
   2. Wake-on-request (Preview) didn't wake a suspended runtime in 3 runs. Resume takes about a minute,
      and 2 of 8 pause/resume cycles failed with "no available compute capacity".
   3. GitHub release downloads on the default egress path stall or fail. In my benchmark, 30 of 33
-     verifier runs never ran their tests, and 18 of those were correct reference solutions that scored 0.
-     With TLS passthrough, the same download finished in ~0.2 s every time.
+     verifier runs never ran their tests, and in 18 of those the reference solution had completed but
+     scored 0. With TLS passthrough, the same download finished in ~0.2 s every time.
   4. Neither SDK's public `create()` can turn on Token X-Ray, Token Saving, Runtime Images, TLS
      passthrough, VNC or SSH keys.
   5. The docs' own "start a server in the background" example dies when `exec` returns, and 14 more
@@ -49,9 +49,9 @@ Things I couldn't attribute are left out.
   ([22](evidence/22-rest-errors.log), [22b](evidence/22b-rest-errors-20261013.log))
 - **The TLS-intercepting gateway is mostly invisible to containers.** Every container I checked got
   Runta's CA file and the usual `*_CA_BUNDLE` / `SSL_CERT_FILE` variables with no mounts or setup, and
-  HTTPS verified in the Debian-based task image, `python:3.12-slim` (also as a non-root user) and
-  `alpine:3.20`. ([25](evidence/25-container-vs-host.json), [25c](evidence/25c-ca-and-background-20261013.json),
-  [25d](evidence/25d-ca-nonroot-20261013.json))
+  HTTPS verified in the Debian-based task image and `python:3.12-slim` (also as a non-root user). An
+  HTTPS request from `alpine:3.20` (busybox `wget`) also worked. ([25](evidence/25-container-vs-host.json),
+  [25c](evidence/25c-ca-and-background-20261013.json), [25d](evidence/25d-ca-nonroot-20261013.json))
 - **Egress enforcement is real, including inside Docker.** Under deny-all, plain HTTP from a task
   container got `403 Forbidden` from the gateway, and host HTTPS failed at TLS. Allowlists switch
   cleanly, and IPs and CIDRs work too (1 run; see the timing caveat below).
@@ -117,8 +117,9 @@ rewards for RL verifiers.**
 - What happened: Terminal-Bench test scripts `curl` uv from a GitHub release before running the tests.
   - In my 2.5-hour benchmark (2026-10-11), **30 of 33 verifier runs** on the three gradable tasks never
     ran their tests because that download failed (curl exit 56 or 18). In **18** of them the reference
-    solution had completed, so a correct answer scored 0. The other 12 would have scored 0 anyway
-    (5 "do nothing" runs and 7 where the solution itself had failed).
+    solution had completed and still scored 0 (the one completed solution whose tests did run scored 1).
+    The other 12 would have scored 0 anyway (5 "do nothing" runs and 7 where the solution itself had
+    failed).
   - All 4 Harbor `-e runta` verifier runs that reached the download failed the same way.
 - Paired test: the same 17.8 MB release asset, downloaded at the same moment on runtimes that differ
   only in `--tls-passthrough-host` for `github.com` and `*.githubusercontent.com`:
@@ -166,10 +167,11 @@ rewards for RL verifiers.**
 - What happened: the Python SDK opens a new WebSocket for every exec.
   - On 2026-10-11, a no-op exec took a median of 1.05–1.07 s end to end (n=20 in each of two sessions),
     and 1.05 s across the benchmark's 48 trials.
-  - On 2026-10-13 I timed the parts separately, on a slower client network. Opening the WebSocket took a
-    median of 2.0 s. After that, sending `true`, getting its exit and closing the socket took a median
-    of 1.04 s (n=20). That part includes at least two network round trips, and a TCP connect to the same
-    host took about 0.2 s, so an estimated ~0.6 s of it isn't network.
+  - On 2026-10-13 I timed the parts separately, on a slower and noisier client network. Opening the
+    WebSocket took a median of 2.0 s. After that, sending `true`, getting its exit and closing the
+    socket took a median of 1.04 s (fastest 0.50 s, n=20). That part includes at least two network
+    round trips (a TCP connect to the same host took 0.12–0.33 s), so I can't say how much of it is on
+    Runta's side.
 - Why it matters: agents and verifiers issue many small commands. At about 1 s each, 100 tool calls
   spend about 100 s waiting.
 - Suggestions: find where the ~1 s inside exec goes, and let one connection carry many commands.
@@ -239,8 +241,9 @@ nothing executes.
 2. **Test the docs in CI.** Most of "the ugly" and bad #6 are drift between docs, CLI and SDK.
    - A static check like [`scripts/docs_lint.py`](scripts/docs_lint.py) (every `runta …` line in the docs
      vs `runta help`) catches U10–U13 today.
-   - Executing snippets in CI would also catch U1, U5, U9 and the background-server example.
-   - Generating the SDK reference pages from the SDK itself would have caught U6 and U14.
+   - Executing snippets in CI would also catch U1, U5, U9, U14 and the background-server example.
+   - Regenerating the SDK reference on every release would have caught U6 and U14's stale reference
+     page.
 3. **Expose the API's create options in both SDKs' public `create()`.** The Python package already
    carries the generated fields, so Token X-Ray, Token Saving, images, VNC and SSH keys are mostly
    plumbing. TLS passthrough already exists in the API the CLI uses (`tls_passthrough_hosts`); it's
